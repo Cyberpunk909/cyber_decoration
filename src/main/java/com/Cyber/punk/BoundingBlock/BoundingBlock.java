@@ -8,11 +8,13 @@
     import javax.annotation.Nonnull;
     import javax.annotation.Nullable;
 
+    import com.Cyber.punk.Cyber;
     import net.minecraft.block.*;
     import net.minecraft.block.material.Material;
     import net.minecraft.block.material.MaterialColor;
     import net.minecraft.block.material.PushReaction;
     import net.minecraft.client.particle.ParticleManager;
+    import net.minecraft.client.renderer.chunk.ChunkRenderCache;
     import net.minecraft.client.world.ClientWorld;
     import net.minecraft.entity.player.PlayerEntity;
     import net.minecraft.fluid.FluidState;
@@ -50,13 +52,6 @@
                     .noOcclusion()
                     .requiresCorrectToolForDrops());
         }
-        public boolean isSolid(BlockState state) {
-            return true;
-        }
-        @Override
-        public VoxelShape getCollisionShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
-            return getShape(state, world, pos, context);
-        }
         @Nullable
         public static BlockPos getMainBlockPos(IBlockReader world, BlockPos thisPos) {
             TileEntity tile = world.getBlockEntity(thisPos);
@@ -82,8 +77,6 @@
             }
             return ActionResultType.FAIL;
         }
-
-
 
 
         public void onRemove(@Nonnull BlockState state, @Nonnull World world, @Nonnull BlockPos pos, @Nonnull BlockState newState, boolean isMoving) {
@@ -213,7 +206,8 @@
             }
         }
 
-        public BlockRenderType getRenderType(BlockState state) {
+        @Override
+        public BlockRenderType getRenderShape(BlockState p_149645_1_) {
             return BlockRenderType.INVISIBLE;
         }
 
@@ -227,24 +221,36 @@
 
         @Override
         public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
-            BoundingBlockEntity te = (BoundingBlockEntity)world.getBlockEntity(pos);
-            if (te != null) {
-                VoxelShape customShape = te.getCustomShape();
-                if (customShape != null) {
-                    BlockPos mainPos = te.getMainPos();
-                    Vector3i offset = mainPos.subtract(pos);
-                    return customShape.move(offset.getX(), offset.getY(), offset.getZ());
+            BlockPos mainPos = getMainBlockPos(world, pos);
+            if (mainPos == null) {
+                return VoxelShapes.empty();
+            } else {
+                BlockState mainState;
+                try {
+                    mainState = world.getBlockState(mainPos);
+                } catch (ArrayIndexOutOfBoundsException var9) {
+                    if (!(world instanceof ChunkRenderCache)) {
+                        Cyber.LOGGER.error("Error getting bounding block shape, for position {}, with main position {}. World of type {}", pos, mainPos, world.getClass().getName());
+                        return VoxelShapes.empty();
+                    }
+
+                    world = ((ChunkRenderCache)world).level;
+                    mainState = world.getBlockState(mainPos);
                 }
+
+                VoxelShape shape = mainState.getShape(world, mainPos, context);
+                BlockPos offset = pos.subtract(mainPos);
+                return shape.move(-offset.getX(), -offset.getY(), -offset.getZ());
             }
-            return VoxelShapes.block();
         }
 
-
+        @Override
         public boolean isPathfindable(BlockState state, IBlockReader world, BlockPos pos, PathType type) {
             return false;
         }
 
         @OnlyIn(Dist.CLIENT)
+        @Override
         public boolean addHitEffects(BlockState state, World world, RayTraceResult target, ParticleManager manager) {
             if (target.getType() == RayTraceResult.Type.BLOCK && target instanceof BlockRayTraceResult) {
                 BlockRayTraceResult blockTarget = (BlockRayTraceResult) target;

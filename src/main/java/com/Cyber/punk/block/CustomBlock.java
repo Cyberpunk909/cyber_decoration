@@ -18,11 +18,13 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.IBooleanFunction;
+import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 import java.util.stream.Stream;
@@ -135,6 +137,11 @@ public class CustomBlock extends HorizontalBlock implements ICustomShapeProvider
             Direction.WEST, new Vector3d(-0.264, 1.0, 0.0),
             Direction.EAST, new Vector3d(0.264, 1.0, 0.0)
     );
+
+    @Override
+    public VoxelShape getShape(@NotNull BlockState blockState, IBlockReader reader, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
+        return SHAPES.get(blockState.getValue(FACING));
+    }
 
     @Override
     public VoxelShape getCustomShape(IBlockReader world, BlockPos pos) {

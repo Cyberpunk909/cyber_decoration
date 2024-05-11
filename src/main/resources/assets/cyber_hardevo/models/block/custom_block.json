@@ -2,7 +2,8 @@
 	"credit": "MadewithBlockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "cyber_hardevo:block/custom_block"
+		"1": "cyber_hardevo:block/custom_block",
+		"particle": "cyber_hardevo:block/custom_block"
 	},
 	"elements": [
 		{
