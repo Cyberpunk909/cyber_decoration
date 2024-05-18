@@ -57,7 +57,7 @@
             TileEntity tile = world.getBlockEntity(thisPos);
             if (tile instanceof BoundingBlockEntity) {
                 BoundingBlockEntity te = (BoundingBlockEntity)tile;
-                return te != null && te.receivedCoords && !thisPos.equals(te.getMainPos()) ? te.getMainPos() : null;
+                return te.receivedCoords && !thisPos.equals(te.getMainPos()) ? te.getMainPos() : null;
             }
             return null;
         }

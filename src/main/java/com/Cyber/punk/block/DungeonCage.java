@@ -1,4 +1,4 @@
-package com.Cyber.punk.block;
+package com.cyber.punk.block;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;

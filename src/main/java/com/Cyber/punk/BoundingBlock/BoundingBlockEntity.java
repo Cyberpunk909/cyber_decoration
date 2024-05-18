@@ -1,14 +1,16 @@
-package com.Cyber.punk.BoundingBlock;
+package com.cyber.punk.boundingBlock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.Cyber.punk.Cyber;
-import com.Cyber.punk.item.Entites;
+import com.cyber.punk.Cyber;
+import com.cyber.punk.Entites;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.NBTUtil;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -41,8 +43,9 @@ public class BoundingBlockEntity extends TileEntity {
         receivedCoords = pos != null;
         if (!this.level.isClientSide()) {
             mainPos = pos;
+            BlockState state = getBlockState();
+            level.sendBlockUpdated(getBlockPos(), state, state, Constants.BlockFlags.DEFAULT);
             this.setChanged();
-            this.level.sendBlockUpdated(pos, this.getBlockState(), this.getBlockState(), Constants.BlockFlags.BLOCK_UPDATE | Constants.BlockFlags.NOTIFY_NEIGHBORS);
         }
     }
 
@@ -110,24 +113,24 @@ public class BoundingBlockEntity extends TileEntity {
         return nbt;
     }
 
-
-
     @Override
-    public CompoundNBT getUpdateTag() {
-        CompoundNBT updateTag = super.getUpdateTag();
-        updateTag.put("main", NBTUtil.writeBlockPos(this.getMainPos()));
-        updateTag.putInt("redstone", this.currentRedstoneLevel);
-        updateTag.putBoolean("receivedCoords", this.receivedCoords);
-        return updateTag;
+    public SUpdateTileEntityPacket getUpdatePacket() {
+        return new SUpdateTileEntityPacket(getBlockPos(), 0, getUpdateTag());
     }
 
-    public void handleUpdateTag(BlockState state, @Nonnull CompoundNBT tag) {
-        super.handleUpdateTag(state, tag);
-        if (tag.contains("main")) {
-            this.mainPos = NBTUtil.readBlockPos(tag.getCompound("main"));
-        }
+    @Nonnull
+    @Override
+    public CompoundNBT getUpdateTag() {
+        return save(new CompoundNBT());
+    }
 
-        this.currentRedstoneLevel = tag.getInt("redstone");
-        this.receivedCoords = tag.getBoolean("receivedCoords");
+    @Override
+    public void handleUpdateTag(BlockState state, CompoundNBT tag) {
+        load(state, tag);
+    }
+
+    @Override
+    public void onDataPacket(NetworkManager manager, @Nonnull SUpdateTileEntityPacket packet) {
+        handleUpdateTag(getBlockState(), packet.getTag());
     }
 }

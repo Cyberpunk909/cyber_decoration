@@ -1,4 +1,4 @@
-package com.Cyber.punk;
+package com.cyber.punk;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;

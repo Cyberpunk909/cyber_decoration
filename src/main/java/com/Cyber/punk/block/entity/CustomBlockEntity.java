@@ -1,6 +1,6 @@
-package com.Cyber.punk.block.entity;
+package com.cyber.punk.block.entity;
 
-import com.Cyber.punk.item.Entites;
+import com.cyber.punk.Entites;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;

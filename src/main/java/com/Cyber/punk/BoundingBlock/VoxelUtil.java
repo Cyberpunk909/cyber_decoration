@@ -1,4 +1,4 @@
-package com.Cyber.punk.BoundingBlock;
+package com.cyber.punk.boundingBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.util.Direction;

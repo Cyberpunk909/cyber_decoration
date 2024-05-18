@@ -1,7 +1,5 @@
-    package com.Cyber.punk;
+    package com.cyber.punk;
 
-    import com.Cyber.punk.item.Entites;
-    import com.Cyber.punk.item.Registry;
     import net.minecraft.block.Blocks;
     import net.minecraftforge.common.MinecraftForge;
     import net.minecraftforge.eventbus.api.IEventBus;

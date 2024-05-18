@@ -3,12 +3,12 @@
     // (powered by FernFlower decompiler)
     //
 
-    package com.Cyber.punk.BoundingBlock;
+    package com.cyber.punk.boundingBlock;
 
     import javax.annotation.Nonnull;
     import javax.annotation.Nullable;
 
-    import com.Cyber.punk.Cyber;
+    import com.cyber.punk.Cyber;
     import net.minecraft.block.*;
     import net.minecraft.block.material.Material;
     import net.minecraft.block.material.MaterialColor;
@@ -57,7 +57,7 @@
             TileEntity tile = world.getBlockEntity(thisPos);
             if (tile instanceof BoundingBlockEntity) {
                 BoundingBlockEntity te = (BoundingBlockEntity)tile;
-                return te != null && te.receivedCoords && !thisPos.equals(te.getMainPos()) ? te.getMainPos() : null;
+                return te.receivedCoords && !thisPos.equals(te.getMainPos()) ? te.getMainPos() : null;
             }
             return null;
         }

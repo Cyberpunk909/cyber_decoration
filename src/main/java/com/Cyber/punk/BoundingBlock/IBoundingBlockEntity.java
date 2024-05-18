@@ -3,7 +3,7 @@
 // (powered by FernFlower decompiler)
 //
 
-package com.Cyber.punk.BoundingBlock;
+package com.cyber.punk.boundingBlock;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

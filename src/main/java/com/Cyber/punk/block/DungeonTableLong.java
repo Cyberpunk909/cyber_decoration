@@ -1,6 +1,6 @@
-package com.Cyber.punk.block;
+package com.cyber.punk.block;
 
-import com.Cyber.punk.BlockUtils;
+import com.cyber.punk.BlockUtils;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;

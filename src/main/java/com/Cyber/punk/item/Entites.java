@@ -1,8 +1,8 @@
-package com.Cyber.punk.item;
+package com.cyber.punk.item;
 
-import com.Cyber.punk.BoundingBlock.BoundingBlockEntity;
-import com.Cyber.punk.block.CustomBlock;
-import com.Cyber.punk.block.entity.CustomBlockEntity;
+import com.cyber.punk.boundingBlock.BoundingBlockEntity;
+import com.cyber.punk.block.CustomBlock;
+import com.cyber.punk.block.entity.CustomBlockEntity;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;

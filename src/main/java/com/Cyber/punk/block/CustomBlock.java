@@ -1,11 +1,11 @@
-package com.Cyber.punk.block;
+package com.cyber.punk.block;
 
-import com.Cyber.punk.BoundingBlock.BoundingBlock;
-import com.Cyber.punk.BoundingBlock.BoundingBlockEntity;
-import com.Cyber.punk.BoundingBlock.ICustomShapeProvider;
-import com.Cyber.punk.BoundingBlock.VoxelUtil;
-import com.Cyber.punk.block.entity.CustomBlockEntity;
-import com.Cyber.punk.item.Registry;
+import com.cyber.punk.boundingBlock.BoundingBlock;
+import com.cyber.punk.boundingBlock.BoundingBlockEntity;
+import com.cyber.punk.boundingBlock.ICustomShapeProvider;
+import com.cyber.punk.boundingBlock.VoxelUtil;
+import com.cyber.punk.block.entity.CustomBlockEntity;
+import com.cyber.punk.Registry;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -99,28 +99,28 @@ public class CustomBlock extends HorizontalBlock implements ICustomShapeProvider
         }
     }
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-14.5, 13, -2, 31.5, 16, 2),
-            Block.box(-14.5, 13, 6, 31.5, 16, 10),
-            Block.box(-15.5, 13, 10, 30.5, 16, 14),
-            Block.box(-15.5, 13, 2, 30.5, 16, 6),
-            Block.box(-14.5, 13, 14, 31.5, 16, 18),
-            Block.box(26.5, 2, 3, 29.5, 4, 13),
-            Block.box(-13.5, 2, 3, -10.5, 4, 13),
-            Block.box(-10.5, 2, 6, 26.5, 4, 10),
-            Block.box(26.5, 6, 0, 29.5, 10, 3),
-            Block.box(25.5, 0, -1, 30.5, 3, 4),
-            Block.box(26, 3, -0.5, 30, 6, 3.5),
-            Block.box(26.5, 6, 13, 29.5, 10, 16),
-            Block.box(26, 3, 12.5, 30, 6, 16.5),
-            Block.box(25.5, 0, 12, 30.5, 3, 17),
-            Block.box(26, 10, -2.5, 30, 13, 18.5),
-            Block.box(-13, 6, 13, -10, 10, 16),
-            Block.box(-13.5, 3, 12.5, -9.5, 6, 16.5),
-            Block.box(-14, 0, 12, -9, 3, 17),
-            Block.box(-13.5, 10, -2.5, -9.5, 13, 18.5),
-            Block.box(-14, 0, -1, -9, 3, 4),
-            Block.box(-13.5, 3, -0.5, -9.5, 6, 3.5),
-            Block.box(-13, 6, 0, -10, 10, 3)
+            Block.box(-7.932295000000002, 9.205326000000001, 0.9189800000000008, 24.640397, 11.329632, 3.7513880000000013),
+            Block.box(-7.932295000000002, 9.205326000000001, 6.583796, 24.640397, 11.329632, 9.416204),
+            Block.box(-8.580754000000002, 9.205326000000001, 9.416204, 23.932295000000003, 11.329632, 12.248612000000001),
+            Block.box(-8.580754000000002, 9.205326000000001, 3.7513880000000013, 23.932295000000003, 11.329632, 6.583796),
+            Block.box(-7.932295000000002, 9.205326000000001, 12.248612000000001, 24.640397, 11.329632, 15.081019999999999),
+            Block.box(21.099887000000003, 1.416204, 4.459490000000001, 23.224193, 2.832408, 11.540510000000001),
+            Block.box(-7.224193000000003, 1.416204, 4.459490000000001, -5.0998870000000025, 2.832408, 11.540510000000001),
+            Block.box(-5.0998870000000025, 1.416204, 6.583796, 21.099887000000003, 2.832408, 9.416204),
+            Block.box(21.099887000000003, 4.248612, 2.335184000000001, 23.224193, 7.0810200000000005, 4.459490000000001),
+            Block.box(20.391785000000002, 0, 1.6270820000000008, 23.932295000000003, 2.124306, 5.167592000000002),
+            Block.box(20.745835999999994, 2.124306, 1.9811330000000007, 23.578243999999998, 4.248612, 4.813541000000001),
+            Block.box(21.099887000000003, 4.248612, 11.540510000000001, 23.224193, 7.0810200000000005, 13.664816000000002),
+            Block.box(20.745835999999994, 2.124306, 11.186459, 23.578243999999998, 4.248612, 14.018867),
+            Block.box(20.391785000000002, 0, 10.832408000000001, 23.932295000000003, 2.124306, 14.372918000000002),
+            Block.box(20.745835999999994, 7.0810200000000005, 0.5649290000000007, 23.578243999999998, 9.205326000000001, 15.435071),
+            Block.box(-6.870142000000001, 4.248612, 11.540510000000001, -4.745836000000001, 7.0810200000000005, 13.664816000000002),
+            Block.box(-7.224193000000003, 2.124306, 11.186459, -4.391785000000001, 4.248612, 14.018867),
+            Block.box(-7.5782440000000015, 0, 10.832408000000001, -4.037734000000002, 2.124306, 14.372918000000002),
+            Block.box(-7.224193000000003, 7.0810200000000005, 0.5649290000000007, -4.391785000000001, 9.205326000000001, 15.435071),
+            Block.box(-7.5782440000000015, 0, 1.6270820000000008, -4.037734000000002, 2.124306, 5.167592000000002),
+            Block.box(-7.224193000000003, 2.124306, 1.9811330000000007, -4.391785000000001, 4.248612, 4.813541000000001),
+            Block.box(-6.870142000000001, 4.248612, 2.335184000000001, -4.745836000000001, 7.0810200000000005, 4.459490000000001)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
     private static final VoxelShape SHAPE_S = VoxelUtil.rotateShape(Direction.NORTH, Direction.SOUTH, SHAPE_N);
@@ -131,11 +131,12 @@ public class CustomBlock extends HorizontalBlock implements ICustomShapeProvider
             Direction.WEST, SHAPE_W,
             Direction.EAST, SHAPE_E
     );
+
     private static final Map<Direction, Vector3d> OFFSETS = ImmutableMap.of(
-            Direction.NORTH, new Vector3d(0.0, 1.0, -0.264),
-            Direction.SOUTH, new Vector3d(0.0, 1.0, 0.264),
-            Direction.WEST, new Vector3d(-0.264, 1.0, 0.0),
-            Direction.EAST, new Vector3d(0.264, 1.0, 0.0)
+            Direction.NORTH, new Vector3d(0, 0, 0),
+            Direction.SOUTH, new Vector3d(0, 0, 0),
+            Direction.WEST, new Vector3d(0, 0, 0),
+            Direction.EAST, new Vector3d(0, 0, 0)
     );
 
     @Override

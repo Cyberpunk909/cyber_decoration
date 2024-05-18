@@ -1,8 +1,8 @@
-package com.Cyber.punk.item;
+package com.cyber.punk.item;
 
-import com.Cyber.punk.BoundingBlock.BoundingBlock;
-import com.Cyber.punk.Cyber;
-import com.Cyber.punk.block.*;
+import com.cyber.punk.boundingBlock.BoundingBlock;
+import com.cyber.punk.Cyber;
+import com.cyber.punk.block.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.block.Block;

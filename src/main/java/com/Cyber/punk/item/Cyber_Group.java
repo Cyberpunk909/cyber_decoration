@@ -1,4 +1,4 @@
-package com.Cyber.punk.item;
+package com.cyber.punk.item;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
