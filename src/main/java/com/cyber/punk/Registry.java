@@ -30,11 +30,12 @@ public class Registry {
     // Блоки
     public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR = BLOCKS.register("dungeon_wood_chair", DungeonWoodChair::new);
     public static final RegistryObject<Block> DUNGEON_DECORATE_HEADS = BLOCKS.register("dungeon_decorate_heads", DungeonDecorateHeads::new);
-    public static final RegistryObject<Block> DUNGEON_TABLE_LONG = BLOCKS.register("dungeon_table_long", DungeonTableLong::new);
-    public static final RegistryObject<Block> DUNGEON_CAGE = BLOCKS.register("dungeon_cage", DungeonCage::new);
-    public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR_WITH_REST = BLOCKS.register("dungeon_wood_chair_with_rest", DungeonWoodChairWithRest::new);
-    public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR_WITH_BONE = BLOCKS.register("dungeon_wood_chair_with_bone", DungeonWoodChairWithBone::new);
     public static final RegistryObject<Block> CUSTOM_BLOCK = BLOCKS.register("custom_block", CustomBlock::new);
+    public static final RegistryObject<Block> DUNGEON_WOOD_THRONE = BLOCKS.register("dungeon_wood_throne", DungeonWoodThrone::new);
+    public static final RegistryObject<Block> DUNGEON_FLAG = BLOCKS.register("dungeon_flag", DungeonFlag::new);
+    public static final RegistryObject<Block> DUNGEON_HANG_FLAG = BLOCKS.register("dungeon_hang_flag", DungeonHangFlag::new);
+
+
 
 
 
@@ -45,17 +46,13 @@ public class Registry {
             () -> new BlockItem(DUNGEON_WOOD_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_DECORATE_HEADS_ITEM = ITEMS.register("dungeon_decorate_heads",
             () -> new BlockItem(DUNGEON_DECORATE_HEADS.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_WOOD_THRONE_ITEM = ITEMS.register("dungeon_wood_throne",
+            () -> new BlockItem(DUNGEON_WOOD_THRONE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_FLAG_ITEM = ITEMS.register("dungeon_flag",
+            () -> new BlockItem(DUNGEON_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_HANG_FLAG_ITEM = ITEMS.register("dungeon_hang_flag",
+            () -> new BlockItem(DUNGEON_HANG_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
 
-    public static final RegistryObject<BlockItem> DUNGEON_TABLE_LONG_ITEM = ITEMS.register("dungeon_table_long",
-            () -> new BlockItem(DUNGEON_TABLE_LONG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-    public static final RegistryObject<BlockItem> DUNGEON_CAGE_ITEM = ITEMS.register("dungeon_cage",
-            () -> new BlockItem(DUNGEON_CAGE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-
-    public static final RegistryObject<BlockItem> DUNGEON_WOOD_CHAIR_WITH_REST_ITEM = ITEMS.register("dungeon_wood_chair_with_rest",
-            () -> new BlockItem(DUNGEON_WOOD_CHAIR_WITH_REST.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-
-    public static final RegistryObject<BlockItem> DUNGEON_WOOD_CHAIR_WITH_BONE_ITEM = ITEMS.register("dungeon_wood_chair_with_bone",
-            () -> new BlockItem(DUNGEON_WOOD_CHAIR_WITH_BONE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
 
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> blockSupplier) {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, blockSupplier);

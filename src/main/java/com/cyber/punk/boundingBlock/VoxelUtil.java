@@ -1,8 +1,6 @@
 package com.cyber.punk.boundingBlock;
 
-import net.minecraft.block.Block;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.math.AxisAlignedBB;
