@@ -1,103 +1,36 @@
 package com.cyber.punk.block;
 
+import com.cyber.punk.AbstractCustomBlock;
+import com.cyber.punk.Registry;
+import com.cyber.punk.block.entity.CustomBlockEntity;
 import com.cyber.punk.boundingBlock.BoundingBlock;
 import com.cyber.punk.boundingBlock.BoundingBlockEntity;
-import com.cyber.punk.boundingBlock.ICustomShapeProvider;
 import com.cyber.punk.boundingBlock.VoxelUtil;
-import com.cyber.punk.block.entity.CustomBlockEntity;
-import com.cyber.punk.Registry;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.state.DirectionProperty;
-import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.IBooleanFunction;
-import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class CustomBlock extends HorizontalBlock implements ICustomShapeProvider {
-    public static final DirectionProperty FACING = HorizontalBlock.FACING;
-
+public class CustomBlock extends AbstractCustomBlock {
     public CustomBlock() {
-        super(AbstractBlock.Properties.of(Material.METAL).strength(5.0F).noOcclusion());
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+        super(AbstractBlock.Properties.of(
+                        Material.WOOD)
+                .strength(5.0F)
+                .noOcclusion());
     }
 
-    @Override
-    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(FACING);
-    }
-
-    @Override
-    public boolean hasTileEntity(BlockState state) {
-        return true;
-    }
-    @Override
-    public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new CustomBlockEntity();
-    }
-
-    @Override
-    public void onPlace(BlockState state, World world, BlockPos pos, BlockState oldState, boolean isMoving) {
-        if (!world.isClientSide && !oldState.is(state.getBlock())) {
-            placeBoundingBlocks(world, pos, state.getValue(FACING));
-        }
-    }
-    private void placeBoundingBlocks(World world, BlockPos pos, Direction facing) {
-        BlockPos[] positions = new BlockPos[]{
-                pos.relative(Direction.EAST), pos.relative(Direction.WEST)
-        };
-
-        VoxelShape shape = SHAPES.get(facing);
-        Vector3d offset = OFFSETS.get(facing);
-
-        for (BlockPos blockPos : positions) {
-            if (world.isEmptyBlock(blockPos)) {
-                world.setBlock(blockPos, Registry.BOUNDING_BLOCK.get().defaultBlockState(), 3);
-                TileEntity te = world.getBlockEntity(blockPos);
-                if (te instanceof BoundingBlockEntity) {
-                    ((BoundingBlockEntity) te).setMainLocation(pos);
-                    ((BoundingBlockEntity) te).setCustomShape(shape.move(-blockPos.getX() + pos.getX(), -blockPos.getY() + pos.getY(), -blockPos.getZ() + pos.getZ()).move(offset.x, offset.y, offset.z));
-                }
-            }
-        }
-    }
-
-    @Override
-    public void onRemove(BlockState state, World world, BlockPos pos, BlockState newState, boolean isMoving) {
-        if (!state.is(newState.getBlock())) {
-            removeBoundingBlocks(world, pos);
-            super.onRemove(state, world, pos, newState, isMoving);
-        }
-    }
-
-    private void removeBoundingBlocks(World world, BlockPos pos) {
-        BlockPos[] positions = new BlockPos[]{
-                pos.relative(Direction.EAST),
-                pos.relative(Direction.WEST)
-        };
-
-        for (BlockPos blockPos : positions) {
-            if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {
-                world.removeBlock(blockPos, false);
-            }
-        }
-    }
     private static final VoxelShape SHAPE_N = Stream.of(
             Block.box(-7.932295000000002, 9.205326000000001, 0.9189800000000008, 24.640397, 11.329632, 3.7513880000000013),
             Block.box(-7.932295000000002, 9.205326000000001, 6.583796, 24.640397, 11.329632, 9.416204),
@@ -122,42 +55,104 @@ public class CustomBlock extends HorizontalBlock implements ICustomShapeProvider
             Block.box(-7.224193000000003, 2.124306, 1.9811330000000007, -4.391785000000001, 4.248612, 4.813541000000001),
             Block.box(-6.870142000000001, 4.248612, 2.335184000000001, -4.745836000000001, 7.0810200000000005, 4.459490000000001)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
+
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
     private static final VoxelShape SHAPE_S = VoxelUtil.rotateShape(Direction.NORTH, Direction.SOUTH, SHAPE_N);
     private static final VoxelShape SHAPE_W = VoxelUtil.rotateShape(Direction.NORTH, Direction.WEST, SHAPE_N);
+
     private static final Map<Direction, VoxelShape> SHAPES = ImmutableMap.of(
             Direction.NORTH, SHAPE_N,
+            Direction.EAST, SHAPE_E,
             Direction.SOUTH, SHAPE_S,
-            Direction.WEST, SHAPE_W,
-            Direction.EAST, SHAPE_E
-    );
-
-    private static final Map<Direction, Vector3d> OFFSETS = ImmutableMap.of(
-            Direction.NORTH, new Vector3d(0, 0, 0),
-            Direction.SOUTH, new Vector3d(0, 0, 0),
-            Direction.WEST, new Vector3d(0, 0, 0),
-            Direction.EAST, new Vector3d(0, 0, 0)
+            Direction.WEST, SHAPE_W
     );
 
     @Override
-    public VoxelShape getShape(@NotNull BlockState blockState, IBlockReader reader, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
-        return SHAPES.get(blockState.getValue(FACING));
+    public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+        return new CustomBlockEntity();
     }
 
     @Override
-    public VoxelShape getCustomShape(IBlockReader world, BlockPos pos) {
-        Direction facing = world.getBlockState(pos).getValue(FACING);
+    protected Map<Direction, VoxelShape> getShapes() {
+        return SHAPES;
+    }
+
+    @Override
+    protected boolean canPlaceBlockAt(World world, BlockPos pos, Direction facing) {
+        BlockPos[] positions;
         switch (facing) {
             case NORTH:
-                return SHAPE_N;
-            case EAST:
-                return SHAPE_E;
-            case SOUTH:
-                return SHAPE_S;
-            case WEST:
-                return SHAPE_W;
             default:
-                return SHAPE_N;
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                break;
+            case SOUTH:
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                break;
+            case WEST:
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                break;
+            case EAST:
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                break;
+        }
+
+        for (BlockPos blockPos : positions) {
+            BlockState state = world.getBlockState(blockPos);
+            if (!state.isAir() && !state.getMaterial().isReplaceable()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    protected void placeBoundingBlocks(World world, BlockPos pos, Direction facing) {
+        BlockPos[] positions;
+        switch (facing) {
+            case NORTH:
+            default:
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                break;
+            case SOUTH:
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                break;
+            case WEST:
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                break;
+            case EAST:
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                break;
+        }
+
+        VoxelShape shape = getShapes().get(facing);
+
+        for (BlockPos blockPos : positions) {
+            BlockState state = world.getBlockState(blockPos);
+            if (state.isAir() || state.getMaterial().isReplaceable()) {
+                world.setBlock(blockPos, Registry.BOUNDING_BLOCK.get().defaultBlockState(), 3);
+                TileEntity te = world.getBlockEntity(blockPos);
+                if (te instanceof BoundingBlockEntity) {
+                    ((BoundingBlockEntity) te).setMainLocation(pos);
+                    ((BoundingBlockEntity) te).setCustomShape(shape.move(-blockPos.getX() + pos.getX(), -blockPos.getY() + pos.getY(), -blockPos.getZ() + pos.getZ()));
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
+        BlockPos[] positions = new BlockPos[]{
+                pos.relative(Direction.NORTH),
+                pos.relative(Direction.EAST),
+                pos.relative(Direction.SOUTH),
+                pos.relative(Direction.WEST)
+        };
+
+        for (BlockPos blockPos : positions) {
+            if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {
+                world.removeBlock(blockPos, false);
+            }
         }
     }
 }

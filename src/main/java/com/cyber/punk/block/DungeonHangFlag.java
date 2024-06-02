@@ -17,15 +17,14 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.IBooleanFunction;
-import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -72,7 +71,7 @@ public class DungeonHangFlag extends AbstractCustomBlock {
             Block.box(26.564215554377363, 21.018229889461743, 4.5, 27.564215554377363, 23.518229889461743, 5),
             Block.box(21.8709513717378, 20.64877126526723, 8, 23.8709513717378, 26.64877126526723, 13),
             Block.box(21.8709513717378, 20.64877126526723, 6, 22.8709513717378, 26.64877126526723, 8)
-    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
+    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).map(voxelShape -> voxelShape.move(0, 1, 0)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
     private static final VoxelShape SHAPE_S = VoxelUtil.rotateShape(Direction.NORTH, Direction.SOUTH, SHAPE_N);
@@ -96,24 +95,8 @@ public class DungeonHangFlag extends AbstractCustomBlock {
     }
 
     @Override
-    public void setPlacedBy(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        BlockPos newPos = pos.above(); // Смещение размещения на 1 блок вверх
-
-        if (!world.isClientSide && canPlaceBlockAt(world, newPos, state.getValue(FACING))) {
-            BlockState newState = state.setValue(FACING, state.getValue(FACING));
-            LOGGER.info("Placing block at new position: {}", newPos);
-            world.setBlock(newPos, newState, 3);
-            TileEntity te = world.getBlockEntity(newPos);
-            if (te instanceof DungeonHangFlagEntity) {
-                ((DungeonHangFlagEntity) te).setMainPosition(newPos);
-                LOGGER.info("TileEntity set at new position: {}", newPos);
-            }
-            world.removeBlock(pos, false); // Удалить старый блок
-            placeBoundingBlocks(world, newPos, state.getValue(FACING)); // Размещение bounding блоков
-            super.setPlacedBy(world, newPos, newState, placer, stack);
-        } else {
-            LOGGER.info("Cannot place block at new position: {}", newPos);
-        }
+    public void setPlacedBy(World p_180633_1_, BlockPos p_180633_2_, BlockState p_180633_3_, @Nullable LivingEntity p_180633_4_, ItemStack p_180633_5_) {
+        placeBoundingBlocks(p_180633_1_, p_180633_2_, p_180633_3_.getValue(FACING));
     }
 
     /*@Override
@@ -143,30 +126,22 @@ public class DungeonHangFlag extends AbstractCustomBlock {
     }
      */
 
+    private BlockPos[] getBoundingBlockPositions(BlockPos origin, Direction facing){
+        Direction direction = facing.getClockWise();
+        return new BlockPos[]{
+            origin.above(), origin.above(2),
+            origin.relative(direction, -1), origin.relative(direction, 1),
+            origin.relative(direction, -1).above(), origin.relative(direction, 1).above(),
+            origin.relative(direction, -1).above(2), origin.relative(direction, 1).above(2)
+        };
+    }
+
     @Override
     protected void placeBoundingBlocks(World world, BlockPos pos, Direction facing) {
-        BlockPos basePos = pos.above(); // Смещение размещения на 1 блок вверх
-        BlockPos[] positions = new BlockPos[]{
-                basePos,
-                basePos.above(),
-                basePos.above(2),
-                basePos.above().north(),
-                basePos.above().south(),
-                basePos.above().east(),
-                basePos.above().west(),
-                basePos.above(2).north(),
-                basePos.above(2).south(),
-                basePos.above(2).east(),
-                basePos.above(2).west(),
-                basePos.above(3),
-                basePos.above(3).north(),
-                basePos.above(3).south(),
-                basePos.above(3).east(),
-                basePos.above(3).west()
-        };
+        BlockPos[] positions = getBoundingBlockPositions(pos, facing);
 
         VoxelShape shape = getShapes().get(facing);
-        LOGGER.info("Placing bounding blocks for {} facing {}", basePos, facing);
+        LOGGER.info("Placing bounding blocks for {} facing {}", pos, facing);
 
         for (BlockPos blockPos : positions) {
             BlockState state = world.getBlockState(blockPos);
@@ -174,11 +149,11 @@ public class DungeonHangFlag extends AbstractCustomBlock {
                 world.setBlock(blockPos, Registry.BOUNDING_BLOCK.get().defaultBlockState(), 3);
                 TileEntity te = world.getBlockEntity(blockPos);
                 if (te instanceof BoundingBlockEntity) {
-                    ((BoundingBlockEntity) te).setMainLocation(basePos);
+                    ((BoundingBlockEntity) te).setMainLocation(pos);
                     ((BoundingBlockEntity) te).setCustomShape(shape.move(
-                            -blockPos.getX() + basePos.getX(),
-                            -blockPos.getY() + basePos.getY(),
-                            -blockPos.getZ() + basePos.getZ()
+                        -blockPos.getX() + pos.getX(),
+                        -blockPos.getY() + pos.getY(),
+                        -blockPos.getZ() + pos.getZ()
                     ));
                     LOGGER.info("Bounding block placed at {}", blockPos);
                 }
@@ -187,28 +162,8 @@ public class DungeonHangFlag extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos) {
-        BlockPos basePos = pos.above(); // Смещение размещения на 1 блок вверх
-        BlockPos[] positions = new BlockPos[]{
-                basePos,
-                basePos.above(),
-                basePos.above(2),
-                basePos.above().north(),
-                basePos.above().south(),
-                basePos.above().east(),
-                basePos.above().west(),
-                basePos.above(2).north(),
-                basePos.above(2).south(),
-                basePos.above(2).east(),
-                basePos.above(2).west(),
-                basePos.above(3),
-                basePos.above(3).north(),
-                basePos.above(3).south(),
-                basePos.above(3).east(),
-                basePos.above(3).west()
-        };
-
-        for (BlockPos blockPos : positions) {
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
+        for (BlockPos blockPos : getBoundingBlockPositions(pos, blockState.getValue(FACING))) {
             if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {
                 world.removeBlock(blockPos, false);
                 LOGGER.info("Bounding block removed at {}", blockPos);

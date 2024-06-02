@@ -4,7 +4,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
@@ -12,7 +12,6 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public abstract class BlockUtils extends Block {
@@ -54,6 +53,22 @@ public abstract class BlockUtils extends Block {
         builder.add(FACING);
     }
 
+    // Метод для обработки выпадения блока при разрушении
+    @Override
+    public void playerWillDestroy(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (!world.isClientSide) {
+            if (!player.isCreative()) {
+                popResource(world, pos, new ItemStack(this));
+            }
+        }
+        if (world.isClientSide) {
+            world.levelEvent(player, 2001, pos, Block.getId(state));
+        }
+        super.playerWillDestroy(world, pos, state, player);
+    }
+    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
+    }
 
     // Получение направления, в котором сущность смотрит относительно блока в мире
     public static Direction getFacingFromEntity(World world, BlockPos clickedBlock, net.minecraft.entity.Entity entity) {
@@ -63,12 +78,5 @@ public abstract class BlockUtils extends Block {
     // Получение направления, в котором сущность смотрит относительно блока в мире
     public static Direction getFacingFromEntity(BlockPos clickedBlock, BlockPos entityPos) {
         return Direction.fromYRot((float) (Math.atan2(entityPos.getZ() - clickedBlock.getZ(), entityPos.getX() - clickedBlock.getX()) * 180.0D / Math.PI) - 90.0F);
-    }
-
-    // Проверка, являются ли два блока одинаковыми
-    public static boolean isSameBlock(BlockState state1, BlockState state2) {
-        return state1.is(state2.getBlock());
-    }
-    protected void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
     }
 }

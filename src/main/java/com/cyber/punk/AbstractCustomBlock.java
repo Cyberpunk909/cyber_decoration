@@ -1,7 +1,5 @@
 package com.cyber.punk;
 
-import com.cyber.punk.boundingBlock.BoundingBlock;
-import com.cyber.punk.boundingBlock.BoundingBlockEntity;
 import com.cyber.punk.boundingBlock.ICustomShapeProvider;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -83,14 +81,14 @@ public abstract class AbstractCustomBlock extends HorizontalBlock implements ICu
 
     }
 
-    protected void removeBoundingBlocks(World world, BlockPos pos) {
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
 
     }
 
     @Override
     public void onRemove(BlockState state, World world, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!state.is(newState.getBlock())) {
-            removeBoundingBlocks(world, pos);
+            removeBoundingBlocks(world, pos, state);
             super.onRemove(state, world, pos, newState, isMoving);
         }
     }
@@ -99,10 +97,10 @@ public abstract class AbstractCustomBlock extends HorizontalBlock implements ICu
     public void playerWillDestroy(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClientSide) {
             if (!player.isCreative()) {
-                removeBoundingBlocks(world, pos);
+                removeBoundingBlocks(world, pos, state);
                 popResource(world, pos, new ItemStack(this));
             } else {
-                removeBoundingBlocks(world, pos);
+                removeBoundingBlocks(world, pos, state);
             }
         }
         if (world.isClientSide) {

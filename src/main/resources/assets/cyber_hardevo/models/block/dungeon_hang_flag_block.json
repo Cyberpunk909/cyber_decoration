@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_hardevo:block/dungeon_hang_flag",
+    "transform": {
+        "translation": [ 0, 1, 0 ]
+    }
+}

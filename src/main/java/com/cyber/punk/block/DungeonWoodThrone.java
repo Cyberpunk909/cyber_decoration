@@ -116,7 +116,7 @@ public class DungeonWoodThrone extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos) {
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
         BlockPos[] positions = new BlockPos[]{
                 pos.relative(Direction.UP)
         };

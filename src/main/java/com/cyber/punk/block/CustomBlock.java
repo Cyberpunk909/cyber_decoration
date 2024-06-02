@@ -141,7 +141,7 @@ public class CustomBlock extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos) {
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
         BlockPos[] positions = new BlockPos[]{
                 pos.relative(Direction.NORTH),
                 pos.relative(Direction.EAST),

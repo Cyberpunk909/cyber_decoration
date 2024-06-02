@@ -163,7 +163,7 @@ public class DungeonFlag extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos) {
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
         BlockPos[] positions = new BlockPos[]{
                 pos.relative(Direction.UP),
                 pos.relative(Direction.UP, 2)

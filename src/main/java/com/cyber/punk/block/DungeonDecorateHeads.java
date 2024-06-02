@@ -55,7 +55,7 @@ public class DungeonDecorateHeads extends BlockUtils {
                 Block.box(3.804915625212967, 0.3999999999999999, 11.035195626783565, 5.304915625212967, 1.6, 12.535195626783565),
                 Block.box(3.304915625212967, 0, 12.535195626783565, 5.304915625212967, 2, 14.535195626783565)
         );
-        SHAPE_N = shapeStream.reduce((v1, v2) -> VoxelShapes.or(v1, v2)).get();
+        SHAPE_N = shapeStream.reduce(VoxelShapes::or).get();
     }
 
     private static final VoxelShape SHAPE_E;
