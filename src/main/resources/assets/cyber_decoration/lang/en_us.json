@@ -1,0 +1,123 @@
+{
+  "item.cyber_decoration.shadow_book": "Shadow book",
+
+  "block.cyber_decoration.dungeon_wood_chair": "Dungeon wood chair",
+  "block.cyber_decoration.dungeon_decorate_heads": "Dungeon decorate heads",
+  "block.cyber_decoration.dungeon_wood_chair_long": "Dungeon_wood_chair_long",
+  "block.cyber_decoration.dungeon_wood_throne": "Dungeon wood throne",
+  "block.cyber_decoration.dungeon_flag": "Dungeon flag",
+  "block.cyber_decoration.dungeon_hang_flag": "Dungeon hang flag",
+
+  "block.cyber_decoration.copper_block": "Copper block",
+  "block.cyber_decoration.exposed_copper_block": "Exposed copper block",
+  "block.cyber_decoration.weathered_copper_block": "Weathered copper block",
+  "block.cyber_decoration.oxidized_copper_block": "Oxidized copper block",
+
+  "block.cyber_decoration.copper_stairs": "Copper stairs",
+  "block.cyber_decoration.exposed_copper_stairs": "Exposed copper stairs",
+  "block.cyber_decoration.weathered_copper_stairs": "Weathered copper stairs",
+  "block.cyber_decoration.oxidized_copper_stairs": "Oxidized copper stairs",
+
+  "block.cyber_decoration.copper_slab": "Copper slab",
+  "block.cyber_decoration.exposed_copper_slab": "Exposed copper slab",
+  "block.cyber_decoration.weathered_copper_slab": "Weathered copper slab",
+  "block.cyber_decoration.oxidized_copper_slab": " Oxidized copper slab",
+
+  "block.cyber_decoration.copper_vertical_slab": "Copper vertical slab",
+  "block.cyber_decoration.exposed_copper_vertical_slab": "Exposed copper vertical slab",
+  "block.cyber_decoration.weathered_copper_vertical_slab": "Weathered copper vertical slab",
+  "block.cyber_decoration.oxidized_copper_vertical_slab": "Oxidized copper vertical slab",
+
+  "block.cyber_decoration.copper_fence": "Copper fence",
+  "block.cyber_decoration.exposed_copper_fence": "Exposed copper fence",
+  "block.cyber_decoration.weathered_copper_fence": "Weathered copper fence",
+  "block.cyber_decoration.oxidized_copper_fence": "Oxidized copper fence",
+
+  "block.cyber_decoration.copper_fence_gate": "Copper fence gate",
+  "block.cyber_decoration.exposed_copper_fence_gate": "Exposed copper fence gate",
+  "block.cyber_decoration.weathered_copper_fence_gate": "Weathered copper fence gate",
+  "block.cyber_decoration.oxidized_copper_fence_gate": "Oxidized copper fence gate",
+
+  "block.cyber_decoration.copper_door": "Copper door",
+  "block.cyber_decoration.exposed_copper_door": "Exposed copper door",
+  "block.cyber_decoration.weathered_copper_door": "Weathered copper door",
+  "block.cyber_decoration.oxidized_copper_door": "Oxidized copper door",
+
+  "block.cyber_decoration.copper_trapdoor": "Copper trapdoor",
+  "block.cyber_decoration.exposed_copper_trapdoor": "Exposed copper trapdoor",
+  "block.cyber_decoration.weathered_copper_trapdoor": "Weathered copper trapdoor",
+  "block.cyber_decoration.oxidized_copper_trapdoor": "Oxidized copper trapdoor",
+
+  "block.cyber_decoration.cut_copper_block": "Cut copper block",
+  "block.cyber_decoration.cut_exposed_copper_block": "Cut exposed copper block",
+  "block.cyber_decoration.cut_weathered_copper_block": "Cut weathered copper block",
+  "block.cyber_decoration.cut_oxidized_copper_block": "Cut oxidized copper block",
+
+  "block.cyber_decoration.cut_copper_stairs": "Cut copper stairs",
+  "block.cyber_decoration.cut_exposed_copper_stairs": "Cut exposed copper stairs",
+  "block.cyber_decoration.cut_weathered_copper_stairs": "Cut weathered copper stairs",
+  "block.cyber_decoration.cut_oxidized_copper_stairs": "Cut oxidized copper stairs",
+
+  "block.cyber_decoration.cut_copper_slab": "Cut copper slab",
+  "block.cyber_decoration.cut_exposed_copper_slab": "Cut exposed copper slab",
+  "block.cyber_decoration.cut_weathered_copper_slab": "Cut weathered copper slab",
+  "block.cyber_decoration.cut_oxidized_copper_slab": "Cut oxidized copper slab",
+
+  "block.cyber_decoration.cut_copper_vertical_slab": "Cut copper vertical slab",
+  "block.cyber_decoration.cut_exposed_copper_vertical_slab": "Cut exposed copper vertical slab",
+  "block.cyber_decoration.cut_weathered_copper_vertical_slab": "Cut weathered copper vertical slab",
+  "block.cyber_decoration.cut_oxidized_copper_vertical_slab": "Cut oxidized copper vertical slab",
+
+  "block.cyber_decoration.cut_copper_fence": "Cut copper fence",
+  "block.cyber_decoration.cut_exposed_copper_fence": "Cut exposed copper fence",
+  "block.cyber_decoration.cut_weathered_copper_fence": "Cut Weathered copper fence",
+  "block.cyber_decoration.cut_oxidized_copper_fence": "Cut oxidized copper fence",
+
+  "block.cyber_decoration.cut_copper_fence_gate": "Cut copper fence gate",
+  "block.cyber_decoration.cut_exposed_copper_fence_gate": "Cut exposed copper fence gate",
+  "block.cyber_decoration.cut_weathered_copper_fence_gate": "Cut weathered copper fence gate",
+  "block.cyber_decoration.cut_oxidized_copper_fence_gate": "Cut oxidized copper fence gate",
+
+  "block.cyber_decoration.moss_block": "Moss block",
+  "block.cyber_decoration.azalea_block": "Azalea block",
+  "block.cyber_decoration.flowering_azalea_block": "Flowering Azalea block",
+  "block.cyber_decoration.azalea_leaves": "Azalea leaves",
+  "block.cyber_decoration.flowering_azalea_leaves": "Flowering Azalea leaves",
+  "block.cyber_decoration.moss_carpet": "Moss carpet",
+  "block.cyber_decoration.small_dripleaf_top": "Small Dripleaf top",
+  "block.cyber_decoration.small_dripleaf_bottom": "Small Dripleaf bottom",
+  "block.cyber_decoration.big_dripleaf_top": "Big Dripleaf top",
+  "block.cyber_decoration.big_dripleaf_stem": "Big Dripleaf stem",
+  "block.cyber_decoration.hanging_roots": "Hanging roots",
+  "block.cyber_decoration.cave_vines": "Cave vines",
+  "block.cyber_decoration.cave_vines_berries": "Cave vines berries",
+  "block.cyber_decoration.cave_vines_plant": "Cave vines plat",
+  "block.cyber_decoration.cave_vines_plant_berries": "Cave vines plant berries",
+
+  "block.cyber_decoration.tantra_planks": "tantra_planks",
+  "block.cyber_decoration.tantra_slab": "tantra_slab",
+  "block.cyber_decoration.tantra_trapdoor": "tantra_trapdoor",
+  "block.cyber_decoration.tantra_stairs": "tantra_stairs",
+
+  "block.cyber_decoration.jungle_planks": "jungle_planks",
+  "block.cyber_decoration.jungle_slab": "jungle_slab",
+  "block.cyber_decoration.jungle_trapdoor": "jungle_trapdoor",
+  "block.cyber_decoration.jungle_stairs": "jungle_stairs",
+
+  "block.cyber_decoration.frozen_planks": "frozen_planks",
+  "block.cyber_decoration.frozen_slab": "frozen_slab",
+  "block.cyber_decoration.frozen_trapdoor": "frozen_trapdoor",
+  "block.cyber_decoration.frozen_stairs": "frozen_stairs",
+
+  "block.cyber_decoration.decorated_pot": "Decorated pot",
+
+  "block.cyber_decoration.birch_hanging_sign": "Birch hanging sign",
+  "block.cyber_decoration.dark_oak_hanging_sign": "Dark oak hanging sign",
+  "block.cyber_decoration.warped_hanging_sign": "Warped hanging sign",
+  "block.cyber_decoration.crimson_hanging_sign": "Crimson hanging sign",
+
+  "block.cyber_decoration.light_block01": "Light block 08",
+  "block.cyber_decoration.light_block15": "Light block 15",
+
+  "itemGroup.Cyber": "Cyber deco block"
+}

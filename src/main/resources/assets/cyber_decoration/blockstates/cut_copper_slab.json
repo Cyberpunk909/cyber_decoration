@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cyber_decoration:block/cut_copper_slab"
+    },
+    "type=double": {
+      "model": "cyber_decoration:block/cut_copper_block"
+    },
+    "type=top": {
+      "model": "cyber_decoration:block/cut_copper_slab_top"
+    }
+  }
+}

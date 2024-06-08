@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cyber_decoration:block/tantra_slab"
+    },
+    "type=top": {
+      "model": "cyber_decoration:block/tantra_slab_top"
+    },
+    "type=double": {
+      "model": "cyber_decoration:block/tantra_slab_full"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:item/small_dripleaf_bottom" },
+    "facing=south": { "model": "cyber_decoration:item/small_dripleaf_bottom", "y":  180},
+    "facing=west": { "model": "cyber_decoration:item/small_dripleaf_bottom", "y":  270},
+    "facing=east": { "model": "cyber_decoration:item/small_dripleaf_bottom", "y":  90}
+  }
+}

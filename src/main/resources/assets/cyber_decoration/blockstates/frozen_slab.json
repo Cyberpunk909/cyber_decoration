@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cyber_decoration:block/frozen_slab"
+    },
+    "type=top": {
+      "model": "cyber_decoration:block/frozen_slab_top"
+    },
+    "type=double": {
+      "model": "cyber_decoration:block/frozen_slab_full"
+    }
+  }
+}
