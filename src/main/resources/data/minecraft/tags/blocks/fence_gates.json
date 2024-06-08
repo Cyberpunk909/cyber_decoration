@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "cyber_decoration:copper_fence_gate",
+    "cyber_decoration:exposed_copper_fence_gate",
+    "cyber_decoration:weathered_copper_fence_gate",
+    "cyber_decoration:oxidized_copper_fence_gate",
+    "cyber_decoration:cut_copper_fence_gate",
+    "cyber_decoration:cut_exposed_copper_fence_gate",
+    "cyber_decoration:cut_weathered_copper_fence_gate",
+    "cyber_decoration:cut_oxidized_copper_fence_gate"
+  ]
+}
