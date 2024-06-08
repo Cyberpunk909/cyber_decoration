@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "cyber_hardevo:item/dungeon_table_long" },
-    "facing=south": { "model": "cyber_hardevo:item/dungeon_table_long", "y":  180},
-    "facing=west": { "model": "cyber_hardevo:item/dungeon_table_long", "y":  270},
-    "facing=east": { "model": "cyber_hardevo:item/dungeon_table_long", "y":  90}
-  }
-}

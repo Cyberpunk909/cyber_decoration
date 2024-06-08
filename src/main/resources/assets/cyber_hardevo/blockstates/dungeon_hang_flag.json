@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "cyber_hardevo:block/dungeon_hang_flag_block" },
-    "facing=south": { "model": "cyber_hardevo:block/dungeon_hang_flag_block", "y":  180},
-    "facing=west": { "model": "cyber_hardevo:block/dungeon_hang_flag_block", "y":  270},
-    "facing=east": { "model": "cyber_hardevo:block/dungeon_hang_flag_block", "y":  90}
-  }
-}
