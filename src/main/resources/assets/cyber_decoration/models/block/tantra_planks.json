@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "cyber_decoration:block/tantra_planks",
+    "particle": "cyber_decoration:block/tantra_planks"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_orientable_trapdoor_top",
+  "textures": {
+    "texture": "cyber_decoration:block/frozen_planks",
+    "particle": "cyber_decoration:block/frozen_planks"
+  }
+}
