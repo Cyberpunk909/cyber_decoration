@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "cyber_decoration:block/cut_copper_block"
+  }
+}

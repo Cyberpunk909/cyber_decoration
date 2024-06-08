@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "cyber_decoration:block/cut_exposed_copper_block"
+  }
+}

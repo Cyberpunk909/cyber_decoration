@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fence_gate",
+  "textures": {
+    "texture": "cyber_decoration:block/exposed_copper_block"
+  }
+}

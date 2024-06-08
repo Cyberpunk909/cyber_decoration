@@ -1,0 +1,41 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "cyber_decoration:block/big_dripleaf_stem",
+		"stem": "cyber_decoration:block/big_dripleaf_stem"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 12],
+			"to": [11, 16, 12],
+			"shade": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 12], "rescale": true},
+			"faces": {
+				"north": {"uv": [3, 0, 14, 16], "texture": "#stem"},
+				"south": {"uv": [3, 0, 14, 16], "texture": "#stem"}
+			}
+		},
+		{
+			"from": [5, 0, 12],
+			"to": [11, 16, 12],
+			"shade": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 12], "rescale": true},
+			"faces": {
+				"north": {"uv": [3, 0, 14, 16], "texture": "#stem"},
+				"south": {"uv": [3, 0, 14, 16], "texture": "#stem"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"head": {
+			"translation": [0, 13.25, 0]
+		}
+	}
+}

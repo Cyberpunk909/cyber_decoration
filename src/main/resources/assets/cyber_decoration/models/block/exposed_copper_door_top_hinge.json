@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "top": "cyber_decoration:block/exposed_copper_door_top",
+    "bottom": "cyber_decoration:block/exposed_copper_door_bottom"
+  }
+}
