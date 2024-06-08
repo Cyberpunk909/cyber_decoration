@@ -1,6 +1,6 @@
 package com.cyber.punk;
 
-import com.cyber.punk.boundingBlock.ICustomShapeProvider;
+import com.cyber.punk.bounding_block.ICustomShapeProvider;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;

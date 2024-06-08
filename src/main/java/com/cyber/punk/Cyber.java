@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 @Mod(Cyber.MOD_ID)
 public class Cyber {
-    public static final String MOD_ID = "cyber_hardevo";
+    public static final String MOD_ID = "cyber_decoration";
     public static final Logger LOGGER = LogManager.getLogger();
 
     public Cyber() {
@@ -45,6 +45,31 @@ public class Cyber {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_FLAG.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_HANG_FLAG.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.AZALEA_BLOCK.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.FLOWERING_AZALEA_BLOCK.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.AZALEA_LEAVES.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.FLOWERING_AZALEA_LEAVES.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.BIG_DRIPLEAF.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.HANGING_ROOTS.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.BIRCH_HANGING_SIGN.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.DARK_OAK_HANGING_SIGN.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.WARPED_HANGING_SIGN.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.CRIMSON_HANGING_SIGN.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.CAVE_VINES.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.CAVE_VINES_BERRIES.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.CAVE_VINES_PLANT.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.CAVE_VINES_PLANT_BERRIES.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SMALL_DRIPLEAF_TOP.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SMALL_DRIPLEAF_BOTTOM.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.BIG_DRIPLEAF_STEM.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.COPPER_DOOR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(Registry.EXPOSED_COPPER_DOOR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(Registry.WEATHERED_COPPER_DOOR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(Registry.OXIDIZED_COPPER_DOOR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(Registry.COPPER_TRAPDOOR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(Registry.EXPOSED_COPPER_TRAPDOOR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(Registry.WEATHERED_COPPER_TRAPDOOR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(Registry.OXIDIZED_COPPER_TRAPDOOR.get(), RenderType.translucent());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
