@@ -4,9 +4,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
@@ -53,19 +51,6 @@ public abstract class BlockUtils extends Block {
         builder.add(FACING);
     }
 
-    // Метод для обработки выпадения блока при разрушении
-    @Override
-    public void playerWillDestroy(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if (!world.isClientSide) {
-            if (!player.isCreative()) {
-                popResource(world, pos, new ItemStack(this));
-            }
-        }
-        if (world.isClientSide) {
-            world.levelEvent(player, 2001, pos, Block.getId(state));
-        }
-        super.playerWillDestroy(world, pos, state, player);
-    }
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
