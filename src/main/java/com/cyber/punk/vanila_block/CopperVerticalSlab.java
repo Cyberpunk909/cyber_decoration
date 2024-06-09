@@ -1,6 +1,7 @@
 package com.cyber.punk.vanila_block;
 
 import com.cyber.punk.BlockUtils;
+import com.cyber.punk.bounding_block.VoxelUtil;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -9,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
@@ -26,36 +28,13 @@ public class CopperVerticalSlab extends BlockUtils {
 
     static {
         Stream<VoxelShape> shapeStream = Stream.of(
-                Block.box(0, 0, 0, 16, 16, 8)
-        );
-        SHAPE_N = shapeStream.reduce((v1, v2) -> VoxelShapes.or(v1, v2)).get();
-    }
-
-    private static final VoxelShape SHAPE_E;
-
-    static {
-        Stream<VoxelShape> shapeStream = Stream.of(
-                Block.box(8, 0, 0, 16, 16, 16)
-        );
-        SHAPE_E = shapeStream.reduce((v1, v2) -> VoxelShapes.or(v1, v2)).get();
-    }
-
-    private static final VoxelShape SHAPE_S;
-
-    static {
-        Stream<VoxelShape> shapeStream = Stream.of(
                 Block.box(0, 0, 8, 16, 16, 16)
         );
-        SHAPE_S = shapeStream.reduce((v1, v2) -> VoxelShapes.or(v1, v2)).get();
+        SHAPE_N = shapeStream.reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
     }
-    private static final VoxelShape SHAPE_W;
-
-    static {
-        Stream<VoxelShape> shapeStream = Stream.of(
-                Block.box(0, 0, 0, 8, 16, 16)
-        );
-        SHAPE_W = shapeStream.reduce((v1, v2) -> VoxelShapes.or(v1, v2)).get();
-    }
+    private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
+    private static final VoxelShape SHAPE_S = VoxelUtil.rotateShape(Direction.NORTH, Direction.SOUTH, SHAPE_N);
+    private static final VoxelShape SHAPE_W = VoxelUtil.rotateShape(Direction.NORTH, Direction.WEST, SHAPE_N);
 
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

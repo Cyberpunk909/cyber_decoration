@@ -42,7 +42,7 @@ import java.util.List;
 public class BoundingBlock extends Block {
     public BoundingBlock() {
         super(AbstractBlock.Properties.of(Material.DIRT)
-                .strength(5.0F, 6.0F)
+                .strength(2F, 3.0F)
                 .noOcclusion());
     }
 

@@ -27,7 +27,7 @@ public class DungeonWoodThrone extends AbstractCustomBlock {
     public DungeonWoodThrone() {
         super(AbstractBlock.Properties.of(
                         Material.WOOD)
-                .strength(5.0F)
+                .strength(1f,4.0f)
                 .noOcclusion());
     }
 

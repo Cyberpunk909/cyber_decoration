@@ -19,7 +19,7 @@ public class DungeonWoodChair extends BlockUtils {
         public static final DirectionProperty FACING = HorizontalBlock.FACING;
     public DungeonWoodChair() {
         super (AbstractBlock.Properties.of(Material.WOOD)
-                .strength(3.5f,4.0f));
+                .strength(1f,4.0f));
     }
 
     private static final VoxelShape SHAPE_N;

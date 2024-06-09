@@ -33,7 +33,7 @@ public class DungeonFlag extends AbstractCustomBlock {
     public DungeonFlag() {
         super(AbstractBlock.Properties.of(
                         Material.WOOD)
-                .strength(5.0F)
+                .strength(1f,4.0f)
                 .noOcclusion());
     }
 

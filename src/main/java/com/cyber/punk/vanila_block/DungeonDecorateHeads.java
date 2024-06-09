@@ -17,8 +17,8 @@ import java.util.stream.Stream;
 public class DungeonDecorateHeads extends BlockUtils {
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
     public DungeonDecorateHeads() {
-        super (AbstractBlock.Properties.of(Material.WOOD)
-                .strength(3.5f,4.0f));
+        super (AbstractBlock.Properties.of(Material.STONE)
+                .strength(1f,4.0f));
     }
 
     private static final VoxelShape SHAPE_N;

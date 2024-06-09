@@ -98,6 +98,9 @@
 		"firstperson_lefthand": {
 			"scale": [0.5, 0.5, 0.5]
 		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
 		"gui": {
 			"rotation": [25, 25, 0],
 			"scale": [0.75, 0.75, 0.75]

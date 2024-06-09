@@ -25,7 +25,7 @@ public class CutCopperVerticalSlab extends BlockUtils {
 
     static {
         Stream<VoxelShape> shapeStream = Stream.of(
-                Block.box(0, 0, 0, 16, 16, 8)
+                Block.box(0, 0, 8, 16, 16, 16)
         );
         SHAPE_N = shapeStream.reduce((v1, v2) -> VoxelShapes.or(v1, v2)).get();
     }
