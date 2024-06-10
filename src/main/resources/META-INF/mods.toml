@@ -2,27 +2,27 @@
 modLoader="javafml"
 loaderVersion="[36,)"
 license="All rights reserved"
+
 [[mods]]
-modId="cyber_decoration"
-version="${file.jarVersion}"
-displayName="Cyber deco block"
-credits="Cyberpunk909"
-authors="Cyberpunk909"
-description='''
-For builders
-'''
+    modId="cyber_decoration"
+    version="${file.jarVersion}"
+    displayName="HardEvolutionDecoration"
+    credits="Cyberpunk909"
+    authors="Cyberpunk909"
+    description='''
+    For builders
+    '''
 
 [[dependencies.cyber_decoration]]
-modId="forge"
-mandatory=true
-versionRange="[36,)"
-ordering="NONE"
-side="BOTH"
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.cyber_decoration]]
-modId="minecraft"
-mandatory=true
-versionRange="[1.16.5,1.17)"
-ordering="NONE"
-side="BOTH"
-
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"

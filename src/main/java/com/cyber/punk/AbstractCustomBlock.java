@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 
 public abstract class AbstractCustomBlock extends HorizontalBlock implements ICustomShapeProvider {
+
     public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
     public AbstractCustomBlock(AbstractBlock.Properties properties) {
@@ -65,25 +66,15 @@ public abstract class AbstractCustomBlock extends HorizontalBlock implements ICu
     @Override
     public void onPlace(BlockState state, World world, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (!world.isClientSide && !oldState.is(state.getBlock())) {
-            if (canPlaceBlockAt(world, pos, state.getValue(FACING))) {
-                placeBoundingBlocks(world, pos, state.getValue(FACING));
-            } else {
-                world.setBlock(pos, oldState, 3);
-            }
+            placeBoundingBlocks(world, pos, state.getValue(FACING));
         }
     }
 
-    protected boolean canPlaceBlockAt(World world, BlockPos pos, Direction facing) {
-        return true;
-    }
+    protected abstract boolean canPlaceBlockAt(World world, BlockPos pos, Direction facing);
 
-    protected void placeBoundingBlocks(World world, BlockPos pos, Direction facing) {
+    protected abstract void placeBoundingBlocks(World world, BlockPos pos, Direction facing);
 
-    }
-
-    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing) {
-
-    }
+    protected abstract void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing);
 
     @Override
     public void onRemove(BlockState state, World world, BlockPos pos, BlockState newState, boolean isMoving) {

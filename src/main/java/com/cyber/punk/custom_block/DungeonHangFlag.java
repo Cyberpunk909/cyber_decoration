@@ -12,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.DirectionalPlaceContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -95,25 +96,17 @@ public class DungeonHangFlag extends AbstractCustomBlock {
     }
 
     @Override
-    public void setPlacedBy(World p_180633_1_, BlockPos p_180633_2_, BlockState p_180633_3_, @Nullable LivingEntity p_180633_4_, ItemStack p_180633_5_) {
-        placeBoundingBlocks(p_180633_1_, p_180633_2_, p_180633_3_.getValue(FACING));
-    }
-
-    /*
-    @Override
     protected boolean canPlaceBlockAt(World world, BlockPos pos, Direction facing) {
         BlockPos[] positions = getBoundingBlockPositions(pos, facing);
-
         for (BlockPos blockPos : positions) {
             BlockState state = world.getBlockState(blockPos);
-            if (!state.isAir() && !state.getMaterial().isReplaceable() && state.getMaterial() != Material.WATER) {
-                LOGGER.info("Cannot place block at {} due to {}", blockPos, state);
+            DirectionalPlaceContext context = new DirectionalPlaceContext(world, blockPos, Direction.DOWN, ItemStack.EMPTY, Direction.UP);
+            if (!state.canBeReplaced(context)) {
                 return false;
             }
         }
         return true;
     }
-     */
 
     private BlockPos[] getBoundingBlockPositions(BlockPos origin, Direction facing){
         Direction direction = facing.getClockWise();
@@ -128,13 +121,11 @@ public class DungeonHangFlag extends AbstractCustomBlock {
     @Override
     protected void placeBoundingBlocks(World world, BlockPos pos, Direction facing) {
         BlockPos[] positions = getBoundingBlockPositions(pos, facing);
-
         VoxelShape shape = getShapes().get(facing);
-        LOGGER.info("Placing bounding blocks for {} facing {}", pos, facing);
-
         for (BlockPos blockPos : positions) {
             BlockState state = world.getBlockState(blockPos);
-            if (state.isAir() || state.getMaterial().isReplaceable()) {
+            DirectionalPlaceContext context = new DirectionalPlaceContext(world, blockPos, Direction.DOWN, ItemStack.EMPTY, Direction.UP);
+            if (state.canBeReplaced(context)) {
                 world.setBlock(blockPos, Registry.BOUNDING_BLOCK.get().defaultBlockState(), 3);
                 TileEntity te = world.getBlockEntity(blockPos);
                 if (te instanceof BoundingBlockEntity) {
@@ -144,7 +135,6 @@ public class DungeonHangFlag extends AbstractCustomBlock {
                         -blockPos.getY() + pos.getY(),
                         -blockPos.getZ() + pos.getZ()
                     ));
-                    LOGGER.info("Bounding block placed at {}", blockPos);
                 }
             }
         }
@@ -155,7 +145,6 @@ public class DungeonHangFlag extends AbstractCustomBlock {
         for (BlockPos blockPos : getBoundingBlockPositions(pos, blockState.getValue(FACING))) {
             if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {
                 world.removeBlock(blockPos, false);
-                LOGGER.info("Bounding block removed at {}", blockPos);
             }
         }
     }
