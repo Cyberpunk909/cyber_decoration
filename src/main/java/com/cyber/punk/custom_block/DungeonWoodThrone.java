@@ -2,7 +2,7 @@ package com.cyber.punk.custom_block;
 
 import com.cyber.punk.AbstractCustomBlock;
 import com.cyber.punk.Registry;
-import com.cyber.punk.custom_block.entity.DungeonWoodThroneEntity;
+import com.cyber.punk.entity.DungeonWoodThroneEntity;
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
 import com.cyber.punk.bounding_block.VoxelUtil;
@@ -116,10 +116,17 @@ public class DungeonWoodThrone extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
-        BlockPos[] positions = new BlockPos[]{
-                pos.relative(Direction.UP)
-        };
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing) {
+        BlockPos[] positions;
+        switch (facing) {
+            case NORTH:
+            case SOUTH:
+            case WEST:
+            case EAST:
+            default:
+                positions = new BlockPos[]{pos.relative(Direction.UP)};
+                break;
+        }
 
         for (BlockPos blockPos : positions) {
             if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {

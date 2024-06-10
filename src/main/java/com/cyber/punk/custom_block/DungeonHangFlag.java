@@ -2,7 +2,7 @@ package com.cyber.punk.custom_block;
 
 import com.cyber.punk.AbstractCustomBlock;
 import com.cyber.punk.Registry;
-import com.cyber.punk.custom_block.entity.DungeonHangFlagEntity;
+import com.cyber.punk.entity.DungeonHangFlagEntity;
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
 import com.cyber.punk.bounding_block.VoxelUtil;
@@ -151,7 +151,7 @@ public class DungeonHangFlag extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing) {
         for (BlockPos blockPos : getBoundingBlockPositions(pos, blockState.getValue(FACING))) {
             if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {
                 world.removeBlock(blockPos, false);

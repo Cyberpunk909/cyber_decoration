@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:item/dungeon_skeleton_sleep" },
+    "facing=south": { "model": "cyber_decoration:item/dungeon_skeleton_sleep", "y":  180},
+    "facing=west": { "model": "cyber_decoration:item/dungeon_skeleton_sleep", "y":  270},
+    "facing=east": { "model": "cyber_decoration:item/dungeon_skeleton_sleep", "y":  90}
+  }
+}

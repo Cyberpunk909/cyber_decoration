@@ -116,6 +116,17 @@
   "block.cyber_decoration.warped_hanging_sign": "Warped hanging sign",
   "block.cyber_decoration.crimson_hanging_sign": "Crimson hanging sign",
 
+  "block.cyber_decoration.dungeon_chest": "Dungeon chest",
+  "block.cyber_decoration.dungeon_skeleton": "Dungeon skeleton",
+  "block.cyber_decoration.dungeon_skeleton_head": "Dungeon skeleton head",
+  "block.cyber_decoration.dungeon_skeleton_sleep": "Dungeon skeleton sleep",
+  "block.cyber_decoration.dungeon_decorate_vase": "Dungeon vase",
+  "block.cyber_decoration.dungeon_decorate_goldbars": "Dungeon gold bars",
+  "block.cyber_decoration.dungeon_decorate_goldbar": "Dungeon gold bar",
+  "block.cyber_decoration.dungeon_decorate_coins": "Dungeon coins",
+  "block.cyber_decoration.dungeon_decorate_goldbars_with_coin": "Dungeon gold bars with coin",
+  "block.cyber_decoration.dungeon_decorate_sword_and_bone": "Dungeon sword and bone",
+
   "block.cyber_decoration.light_block01": "Light block 08",
   "block.cyber_decoration.light_block15": "Light block 15",
 

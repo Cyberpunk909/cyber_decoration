@@ -34,6 +34,7 @@ public class Registry {
     public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR = BLOCKS.register("dungeon_wood_chair", DungeonWoodChair::new);
     public static final RegistryObject<Block> DUNGEON_DECORATE_HEADS = BLOCKS.register("dungeon_decorate_heads", DungeonDecorateHeads::new);
     public static final RegistryObject<Block> COPPER_BLOCK = BLOCKS.register("copper_block", CopperBlock::new);
+    public static final RegistryObject<Block> DUNGEON_DECORATE_VASE = BLOCKS.register("dungeon_decorate_vase", DungeonDecorateVase::new);
     public static final RegistryObject<Block> BIRCH_HANGING_SIGN = BLOCKS.register("birch_hanging_sign", BirchHangingSign::new);
     public static final RegistryObject<Block> DARK_OAK_HANGING_SIGN = BLOCKS.register("dark_oak_hanging_sign", DarkOakHangingSign::new);
     public static final RegistryObject<Block> WARPED_HANGING_SIGN = BLOCKS.register("warped_hanging_sign", WarpedHangingSign::new);
@@ -46,11 +47,28 @@ public class Registry {
     public static final RegistryObject<Block> CUT_EXPOSED_COPPER_BLOCK = BLOCKS.register("cut_exposed_copper_block", CutExposedCopperBlock::new);
     public static final RegistryObject<Block> CUT_WEATHERED_COPPER_BLOCK = BLOCKS.register("cut_weathered_copper_block", CutWeatheredCopperBlock::new);
     public static final RegistryObject<Block> CUT_OXIDIZED_COPPER_BLOCK = BLOCKS.register("cut_oxidized_copper_block", CutOxidizedCopperBlock::new);
+    public static final RegistryObject<Block> DUNGEON_DECORATE_GOLDBARS = BLOCKS.register("dungeon_decorate_goldbars", DungeonDecorateGoldbars::new);
+    public static final RegistryObject<Block> DUNGEON_DECORATE_GOLDBARS_WITH_COIN = BLOCKS.register("dungeon_decorate_goldbars_with_coin", DungeonDecorateGoldbarsWithCoin::new);
+    public static final RegistryObject<Block> DUNGEON_DECORATE_COINS = BLOCKS.register("dungeon_decorate_coins", DungeonDecorateCoins::new);
+    public static final RegistryObject<Block> DUNGEON_DECORATE_GOLDBAR = BLOCKS.register("dungeon_decorate_goldbar", DungeonDecorateGoldbar::new);
+    public static final RegistryObject<Block> DUNGEON_DECORATE_SWORD_AND_BONE = BLOCKS.register("dungeon_decorate_sword_and_bone", DungeonDecorateSwordAndBone::new);
 
 
     // Обычные блоки предметы
+    public static final RegistryObject<BlockItem> DUNGEON_DECORATE_GOLDBARS_WITH_COIN_ITEM = ITEMS.register("dungeon_decorate_goldbars_with_coin",
+            () -> new BlockItem(DUNGEON_DECORATE_GOLDBARS_WITH_COIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_DECORATE_COINS_ITEM = ITEMS.register("dungeon_decorate_coins",
+            () -> new BlockItem(DUNGEON_DECORATE_COINS.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_DECORATE_GOLDBAR_ITEM = ITEMS.register("dungeon_decorate_goldbar",
+            () -> new BlockItem(DUNGEON_DECORATE_GOLDBAR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_WOOD_CHAIR_ITEM = ITEMS.register("dungeon_wood_chair",
             () -> new BlockItem(DUNGEON_WOOD_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_DECORATE_VASE_ITEM = ITEMS.register("dungeon_decorate_vase",
+            () -> new BlockItem(DUNGEON_DECORATE_VASE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_DECORATE_GOLDBARS_ITEM = ITEMS.register("dungeon_decorate_goldbars",
+            () -> new BlockItem(DUNGEON_DECORATE_GOLDBARS.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_DECORATE_SWORD_AND_BONE_ITEM = ITEMS.register("dungeon_decorate_sword_and_bone",
+            () -> new BlockItem(DUNGEON_DECORATE_SWORD_AND_BONE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_DECORATE_HEADS_ITEM = ITEMS.register("dungeon_decorate_heads",
             () -> new BlockItem(DUNGEON_DECORATE_HEADS.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> BIRCH_HANGING_SIGN_ITEM = ITEMS.register("birch_hanging_sign",
@@ -80,6 +98,14 @@ public class Registry {
             () -> new BlockItem(CUT_WEATHERED_COPPER_BLOCK.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> CUT_OXIDIZED_COPPER_BLOCK_ITEM = ITEMS.register("cut_oxidized_copper_block",
             () -> new BlockItem(CUT_OXIDIZED_COPPER_BLOCK.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+
+    // Сундуки
+    public static final RegistryObject<Block> DUNGEON_CHEST = BLOCKS.register("dungeon_chest", DungeonChest::new);
+
+    //Сундуки предметы
+    public static final RegistryObject<BlockItem> DUNGEON_CHEST_ITEM = ITEMS.register("dungeon_chest",
+            () -> new BlockItem(DUNGEON_CHEST.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+
 
     // Abyss
     public static final RegistryObject<Block> TANTRA_PLANKS = registerBlock("tantra_planks",
@@ -434,6 +460,9 @@ public class Registry {
     public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR_LONG = BLOCKS.register("dungeon_wood_chair_long", DungeonWoodChairLong::new);
     public static final RegistryObject<Block> DUNGEON_WOOD_THRONE = BLOCKS.register("dungeon_wood_throne", DungeonWoodThrone::new);
     public static final RegistryObject<Block> DUNGEON_FLAG = BLOCKS.register("dungeon_flag", DungeonFlag::new);
+    public static final RegistryObject<Block> DUNGEON_SKELETON = BLOCKS.register("dungeon_skeleton", DungeonSkeleton::new);
+    public static final RegistryObject<Block> DUNGEON_SKELETON_SLEEP = BLOCKS.register("dungeon_skeleton_sleep", DungeonSkeletonSleep::new);
+    public static final RegistryObject<Block> DUNGEON_SKELETON_HEAD = BLOCKS.register("dungeon_skeleton_head", DungeonSkeletonHead::new);
     public static final RegistryObject<Block> DUNGEON_HANG_FLAG = BLOCKS.register("dungeon_hang_flag", DungeonHangFlag::new);
 
     // Блоки предметы использующие Bounding
@@ -441,8 +470,14 @@ public class Registry {
             () -> new BlockItem(DUNGEON_WOOD_CHAIR_LONG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_WOOD_THRONE_ITEM = ITEMS.register("dungeon_wood_throne",
             () -> new BlockItem(DUNGEON_WOOD_THRONE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_HEAD_ITEM = ITEMS.register("dungeon_skeleton_head",
+            () -> new BlockItem(DUNGEON_SKELETON_HEAD.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_SLEEP_ITEM = ITEMS.register("dungeon_skeleton_sleep",
+            () -> new BlockItem(DUNGEON_SKELETON_SLEEP.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_FLAG_ITEM = ITEMS.register("dungeon_flag",
             () -> new BlockItem(DUNGEON_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_ITEM = ITEMS.register("dungeon_skeleton",
+            () -> new BlockItem(DUNGEON_SKELETON.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_HANG_FLAG_ITEM = ITEMS.register("dungeon_hang_flag",
             () -> new BlockItem(DUNGEON_HANG_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
 

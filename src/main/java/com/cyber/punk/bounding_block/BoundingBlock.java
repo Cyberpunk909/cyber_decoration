@@ -233,7 +233,7 @@ public class BoundingBlock extends Block {
 
     @Override
     public BlockRenderType getRenderShape(BlockState state) {
-        return BlockRenderType.INVISIBLE;
+        return BlockRenderType.MODEL;
     }
 
     @Override

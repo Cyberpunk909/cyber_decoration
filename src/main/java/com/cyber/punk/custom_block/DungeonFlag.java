@@ -2,7 +2,7 @@ package com.cyber.punk.custom_block;
 
 import com.cyber.punk.AbstractCustomBlock;
 import com.cyber.punk.Registry;
-import com.cyber.punk.custom_block.entity.DungeonFlagEntity;
+import com.cyber.punk.entity.DungeonFlagEntity;
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
 import com.cyber.punk.bounding_block.VoxelUtil;
@@ -74,29 +74,11 @@ public class DungeonFlag extends AbstractCustomBlock {
         BlockPos[] positions;
         switch (facing) {
             case NORTH:
-            default:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
-                break;
             case SOUTH:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
-                break;
             case WEST:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
-                break;
             case EAST:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
+            default:
+                positions = new BlockPos[]{pos.relative(Direction.UP)};
                 break;
         }
 
@@ -115,29 +97,11 @@ public class DungeonFlag extends AbstractCustomBlock {
         BlockPos[] positions;
         switch (facing) {
             case NORTH:
-            default:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
-                break;
             case SOUTH:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
-                break;
             case WEST:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
-                break;
             case EAST:
-                positions = new BlockPos[]{
-                        pos.relative(Direction.UP),
-                        pos.relative(Direction.UP, 2)
-                };
+            default:
+                positions = new BlockPos[]{pos.relative(Direction.UP)};
                 break;
         }
 
@@ -163,11 +127,17 @@ public class DungeonFlag extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
-        BlockPos[] positions = new BlockPos[]{
-                pos.relative(Direction.UP),
-                pos.relative(Direction.UP, 2)
-        };
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing) {
+        BlockPos[] positions;
+        switch (facing) {
+            case NORTH:
+            case SOUTH:
+            case WEST:
+            case EAST:
+            default:
+                positions = new BlockPos[]{pos.relative(Direction.UP)};
+                break;
+        }
 
         for (BlockPos blockPos : positions) {
             if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {

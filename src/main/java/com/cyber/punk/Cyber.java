@@ -44,6 +44,9 @@ public class Cyber {
     private void doClientStuff(final FMLClientSetupEvent event) {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_FLAG.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.DUNGEON_SKELETON.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.DUNGEON_SKELETON_HEAD.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.DUNGEON_SKELETON_SLEEP.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_HANG_FLAG.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.AZALEA_BLOCK.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.FLOWERING_AZALEA_BLOCK.get(), RenderType.cutout());

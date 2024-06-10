@@ -5,6 +5,7 @@ import com.cyber.punk.Registry;
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
 import com.cyber.punk.bounding_block.VoxelUtil;
+import com.cyber.punk.entity.DungeonWoodChairLongEntity;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -68,7 +69,7 @@ public class DungeonWoodChairLong extends AbstractCustomBlock {
 
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new com.cyber.punk.custom_block.entity.DungeonWoodChairLong();
+        return new DungeonWoodChairLongEntity();
     }
 
     @Override
@@ -140,13 +141,23 @@ public class DungeonWoodChairLong extends AbstractCustomBlock {
     }
 
     @Override
-    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
-        BlockPos[] positions = new BlockPos[]{
-                pos.relative(Direction.NORTH),
-                pos.relative(Direction.EAST),
-                pos.relative(Direction.SOUTH),
-                pos.relative(Direction.WEST)
-        };
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing) {
+        BlockPos[] positions;
+        switch (facing) {
+            case NORTH:
+            default:
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                break;
+            case SOUTH:
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                break;
+            case WEST:
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                break;
+            case EAST:
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                break;
+        }
 
         for (BlockPos blockPos : positions) {
             if (world.getBlockState(blockPos).getBlock() instanceof BoundingBlock) {

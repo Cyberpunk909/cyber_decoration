@@ -81,14 +81,14 @@ public abstract class AbstractCustomBlock extends HorizontalBlock implements ICu
 
     }
 
-    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState) {
+    protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing) {
 
     }
 
     @Override
     public void onRemove(BlockState state, World world, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!state.is(newState.getBlock())) {
-            removeBoundingBlocks(world, pos, state);
+            removeBoundingBlocks(world, pos, state, state.getValue(FACING));
             super.onRemove(state, world, pos, newState, isMoving);
         }
     }
@@ -97,10 +97,10 @@ public abstract class AbstractCustomBlock extends HorizontalBlock implements ICu
     public void playerWillDestroy(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!world.isClientSide) {
             if (!player.isCreative()) {
-                removeBoundingBlocks(world, pos, state);
+                removeBoundingBlocks(world, pos, state, state.getValue(FACING));
                 popResource(world, pos, new ItemStack(this));
             } else {
-                removeBoundingBlocks(world, pos, state);
+                removeBoundingBlocks(world, pos, state, state.getValue(FACING));
             }
         }
         if (world.isClientSide) {

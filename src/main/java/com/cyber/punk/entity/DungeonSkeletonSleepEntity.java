@@ -1,4 +1,4 @@
-package com.cyber.punk.custom_block.entity;
+package com.cyber.punk.entity;
 
 import com.cyber.punk.Entites;
 import net.minecraft.block.BlockState;
@@ -6,11 +6,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 
-public class DungeonWoodChairLong extends TileEntity {
+public class DungeonSkeletonSleepEntity extends TileEntity {
     private BlockPos mainPos;
-
-    public DungeonWoodChairLong() {
-        super(Entites.DUNGEON_WOOD_CHAIR_LONG.get());
+    public DungeonSkeletonSleepEntity() {
+        super(Entites.DUNGEON_SKELETON_SLEEP.get());
         this.mainPos = BlockPos.ZERO;
     }
 
