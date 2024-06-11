@@ -99,13 +99,6 @@ public class Registry {
     public static final RegistryObject<BlockItem> CUT_OXIDIZED_COPPER_BLOCK_ITEM = ITEMS.register("cut_oxidized_copper_block",
             () -> new BlockItem(CUT_OXIDIZED_COPPER_BLOCK.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
 
-    // Сундуки
-    public static final RegistryObject<Block> DUNGEON_CHEST = BLOCKS.register("dungeon_chest", DungeonChest::new);
-
-    //Сундуки предметы
-    public static final RegistryObject<BlockItem> DUNGEON_CHEST_ITEM = ITEMS.register("dungeon_chest",
-            () -> new BlockItem(DUNGEON_CHEST.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-
 
     // Abyss
     public static final RegistryObject<Block> TANTRA_PLANKS = registerBlock("tantra_planks",

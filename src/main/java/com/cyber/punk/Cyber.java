@@ -75,6 +75,7 @@ public class Cyber {
         RenderTypeLookup.setRenderLayer(Registry.OXIDIZED_COPPER_TRAPDOOR.get(), RenderType.translucent());
     }
 
+
     private void enqueueIMC(final InterModEnqueueEvent event) {
         InterModComms.sendTo("examplemod", "helloworld", () -> {
             LOGGER.info("Hello world from the MDK");

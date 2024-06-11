@@ -20,7 +20,6 @@ public class Entites {
     public static final RegistryObject<TileEntityType<DungeonFlagEntity>> DUNGEON_FLAG = register(Registry.DUNGEON_FLAG, DungeonFlagEntity::new);
     public static final RegistryObject<TileEntityType<DungeonSkeletonEntity>> DUNGEON_SKELETON = register(Registry.DUNGEON_SKELETON, DungeonSkeletonEntity::new);
     public static final RegistryObject<TileEntityType<DungeonSkeletonSleepEntity>> DUNGEON_SKELETON_SLEEP = register(Registry.DUNGEON_SKELETON_SLEEP, DungeonSkeletonSleepEntity::new);
-    public static final RegistryObject<TileEntityType<DungeonChestEntity>> DUNGEON_CHEST = register(Registry.DUNGEON_CHEST, DungeonChestEntity::new);
     public static final RegistryObject<TileEntityType<DungeonHangFlagEntity>> DUNGEON_HANG_FLAG = register(Registry.DUNGEON_HANG_FLAG, DungeonHangFlagEntity::new);
 
     private static <T extends TileEntity> RegistryObject<TileEntityType<T>> register(@Nonnull RegistryObject<? extends Block> block, @Nonnull Supplier<T> supplier) {
