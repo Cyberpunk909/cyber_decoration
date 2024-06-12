@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:item/dungeon_torch" },
+    "facing=south": { "model": "cyber_decoration:item/dungeon_torch", "y":  180},
+    "facing=west": { "model": "cyber_decoration:item/dungeon_torch", "y":  270},
+    "facing=east": { "model": "cyber_decoration:item/dungeon_torch", "y":  90}
+  }
+}

@@ -3,7 +3,7 @@ package com.cyber.punk.bounding_block;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.cyber.punk.Cyber;
+import com.cyber.punk.util.Cyber;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.PushReaction;
@@ -233,7 +233,7 @@ public class BoundingBlock extends Block {
 
     @Override
     public BlockRenderType getRenderShape(BlockState state) {
-        return BlockRenderType.INVISIBLE;
+        return BlockRenderType.MODEL;
     }
 
     @Override

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model":"cyber_decoration:block/nothing"
+      "model":"minecraft:block/iron_block"
     }
   }
 }

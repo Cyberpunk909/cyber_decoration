@@ -3,8 +3,8 @@ package com.cyber.punk.bounding_block;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.cyber.punk.Cyber;
-import com.cyber.punk.Entites;
+import com.cyber.punk.util.Cyber;
+import com.cyber.punk.util.Entites;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;

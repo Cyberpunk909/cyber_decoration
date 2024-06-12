@@ -3,7 +3,7 @@
 
   "block.cyber_decoration.dungeon_wood_chair": "Dungeon wood chair",
   "block.cyber_decoration.dungeon_decorate_heads": "Dungeon decorate heads",
-  "block.cyber_decoration.dungeon_wood_chair_long": "Dungeon_wood_chair_long",
+  "block.cyber_decoration.dungeon_wood_chair_long": "Dungeon wood chair long",
   "block.cyber_decoration.dungeon_wood_throne": "Dungeon wood throne",
   "block.cyber_decoration.dungeon_flag": "Dungeon flag",
   "block.cyber_decoration.dungeon_hang_flag": "Dungeon hang flag",
@@ -116,7 +116,13 @@
   "block.cyber_decoration.warped_hanging_sign": "Warped hanging sign",
   "block.cyber_decoration.crimson_hanging_sign": "Crimson hanging sign",
 
-  "block.cyber_decoration.dungeon_chest": "Dungeon chest",
+  "block.cyber_decoration.dungeon_torch": "Dungeon torch",
+  "block.cyber_decoration.dungeon_cage": "Dungeon cage with bone",
+  "block.cyber_decoration.dungeon_cage_with_bone": "Dungeon cage with bone",
+  "block.cyber_decoration.dungeon_weapon_stand": "Dungeon weapon stand",
+  "block.cyber_decoration.dungeon_wood_barrel": "Dungeon wood barrel",
+  "block.cyber_decoration.dungeon_wood_box": "Dungeon wood box",
+  "block.cyber_decoration.dungeon_wood_chair_with_bone": "Dungeon wood chair with bone",
   "block.cyber_decoration.dungeon_skeleton": "Dungeon skeleton",
   "block.cyber_decoration.dungeon_skeleton_head": "Dungeon skeleton head",
   "block.cyber_decoration.dungeon_skeleton_sleep": "Dungeon skeleton sleep",
@@ -127,8 +133,23 @@
   "block.cyber_decoration.dungeon_decorate_goldbars_with_coin": "Dungeon gold bars with coin",
   "block.cyber_decoration.dungeon_decorate_sword_and_bone": "Dungeon sword and bone",
 
+  "block.cyber_decoration.oak_log": "Oak log",
+  "block.cyber_decoration.oak_plant": "Oak plant",
+  "block.cyber_decoration.oak_plank": "Oak plank",
+  "block.cyber_decoration.oak_plank_vertical": "Oak plank vertical",
+  "block.cyber_decoration.oak_plank_horizontal": "Oak plank horizontal",
+  "block.cyber_decoration.oak_chair": "Oak chair",
+  "block.cyber_decoration.oak_bench": "Oak bench",
+  "block.cyber_decoration.oak_stool": "Oak stool",
+  "block.cyber_decoration.oak_tree": "Oak tree",
+  "block.cyber_decoration.oak_dead_tree": "Oak dead tree",
+  "block.cyber_decoration.scare_crow": "Scare crow",
+  "block.cyber_decoration.oak_stripped_chair": "Oak plank",
+  "block.cyber_decoration.oak_wood_chair": "Oak wood chair",
+  "block.cyber_decoration.frog": "Frog",
+
   "block.cyber_decoration.light_block01": "Light block 08",
   "block.cyber_decoration.light_block15": "Light block 15",
 
-  "itemGroup.Cyber": "Cyber deco block"
+  "itemGroup.Cyber": "HardEvolution Decoration"
 }

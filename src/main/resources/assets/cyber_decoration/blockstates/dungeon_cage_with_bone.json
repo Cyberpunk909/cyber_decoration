@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:item/dungeon_cage_with_bone" },
+    "facing=south": { "model": "cyber_decoration:item/dungeon_cage_with_bone", "y":  180},
+    "facing=west": { "model": "cyber_decoration:item/dungeon_cage_with_bone", "y":  270},
+    "facing=east": { "model": "cyber_decoration:item/dungeon_cage_with_bone", "y":  90}
+  }
+}

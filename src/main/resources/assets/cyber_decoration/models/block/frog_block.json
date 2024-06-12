@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_decoration:block/frog",
+    "transform": {
+        "translation": [ 0, 1, -1 ]
+    }
+}
