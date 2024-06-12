@@ -24,7 +24,8 @@ public class SmallDripleafTop extends BlockUtils {
     public SmallDripleafTop() {
         super(AbstractBlock.Properties.of(Material.LEAVES)
                 .strength(0.5f, 3.0f)
-                .noOcclusion());
+                .noOcclusion()
+                .noCollission());
     }
     private static final VoxelShape SHAPE_N;
 

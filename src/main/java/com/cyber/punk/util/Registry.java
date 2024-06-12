@@ -254,27 +254,32 @@ public class Registry {
             () -> new Block(
                     Block.Properties.of(Material.LEAVES)
                             .strength(0.1F, 3.0F)
-                            .noOcclusion()));
+                            .noOcclusion()
+                            .noCollission()));
     public static final RegistryObject<Block> CAVE_VINES = registerBlock("cave_vines",
             () -> new Block(
                     Block.Properties.of(Material.LEAVES)
                             .strength(0.1F, 3.0F)
-                            .noOcclusion()));
+                            .noOcclusion()
+                            .noCollission()));
     public static final RegistryObject<Block> CAVE_VINES_BERRIES = registerBlock("cave_vines_berries",
             () -> new Block(
                     Block.Properties.of(Material.LEAVES)
                             .strength(0.1F, 3.0F)
-                            .noOcclusion()));
+                            .noOcclusion()
+                            .noCollission()));
     public static final RegistryObject<Block> CAVE_VINES_PLANT = registerBlock("cave_vines_plant",
             () -> new Block(
                     Block.Properties.of(Material.LEAVES)
                             .strength(0.1F, 3.0F)
-                            .noOcclusion()));
+                            .noOcclusion()
+                            .noCollission()));
     public static final RegistryObject<Block> CAVE_VINES_PLANT_BERRIES = registerBlock("cave_vines_plant_berries",
             () -> new Block(
                     Block.Properties.of(Material.LEAVES)
                             .strength(0.1F, 3.0F)
-                            .noOcclusion()));
+                            .noOcclusion()
+                            .noCollission()));
 
 
     // Растения
