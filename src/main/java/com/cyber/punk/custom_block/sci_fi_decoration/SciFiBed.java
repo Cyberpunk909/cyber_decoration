@@ -1,9 +1,10 @@
-package com.cyber.punk.custom_block.summer_decoration;
+package com.cyber.punk.custom_block.sci_fi_decoration;
 
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
 import com.cyber.punk.bounding_block.VoxelUtil;
-import com.cyber.punk.entity.summer_decoration.OakBenchEntity;
+import com.cyber.punk.entity.sci_fi_decoration.SciFiBedEntity;
+import com.cyber.punk.entity.summer_decoration.OakPlankHorizontalEntity;
 import com.cyber.punk.util.AbstractCustomBlock;
 import com.cyber.punk.util.Registry;
 import com.google.common.collect.ImmutableMap;
@@ -22,16 +23,16 @@ import net.minecraft.world.World;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class OakBench extends AbstractCustomBlock {
-    public OakBench() {
+public class SciFiBed extends AbstractCustomBlock {
+    public SciFiBed() {
         super(Properties.of(
-                        Material.WOOD)
+                        Material.METAL)
                 .strength(2f,4.0f)
                 .noOcclusion());
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-9, 0, 0, 25, 24, 19)
+            Block.box(0, 0, -5, 16, 7, 21)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -47,37 +48,30 @@ public class OakBench extends AbstractCustomBlock {
 
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new OakBenchEntity();
+        return new SciFiBedEntity();
     }
 
     @Override
     protected Map<Direction, VoxelShape> getShapes() {
         return SHAPES;
     }
+
     @Override
     protected boolean canPlaceBlockAt(World world, BlockPos pos, Direction facing) {
         BlockPos[] positions;
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
                 break;
         }
 
@@ -97,27 +91,18 @@ public class OakBench extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
                 break;
         }
-
         VoxelShape shape = getShapes().get(facing);
 
         for (BlockPos blockPos : positions) {
@@ -132,31 +117,22 @@ public class OakBench extends AbstractCustomBlock {
             }
         }
     }
-
     @Override
     protected void removeBoundingBlocks(World world, BlockPos pos, BlockState blockState, Direction facing) {
         BlockPos[] positions;
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
                 break;
         }
 

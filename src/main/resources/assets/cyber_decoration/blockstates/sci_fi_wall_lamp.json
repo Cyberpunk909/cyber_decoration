@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/sci_fi_wall_lamp" },
+    "facing=south": { "model": "cyber_decoration:block/sci_fi_wall_lamp", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/sci_fi_wall_lamp", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/sci_fi_wall_lamp", "y":  90}
+  }
+}

@@ -63,6 +63,17 @@ public class Cyber {
         RenderTypeLookup.setRenderLayer(Registry.OAK_TREE.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.SCARE_CROW.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.FROG.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.GRAFFITI.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.MAP_HOLOGRAM.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.MONITOR.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SCI_FI_PLANT.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SODA_STORAGE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SCI_FI_TABLE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SCI_FI_TABLET.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SCI_FI_WALL_LAMP.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SCI_FI_LAMP.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SCI_FI_CC_TV.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.SCI_FI_BENCH.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.OAK_DEAD_TREE.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.OAK_WOOD_CHAIR.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_CAGE.get(), RenderType.cutout());

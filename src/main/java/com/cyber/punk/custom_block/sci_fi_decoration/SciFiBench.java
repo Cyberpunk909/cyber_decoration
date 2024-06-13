@@ -1,9 +1,10 @@
-package com.cyber.punk.custom_block.summer_decoration;
+package com.cyber.punk.custom_block.sci_fi_decoration;
 
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
 import com.cyber.punk.bounding_block.VoxelUtil;
-import com.cyber.punk.entity.summer_decoration.OakBenchEntity;
+import com.cyber.punk.entity.dungeon_decoration.DungeonSkeletonSleepEntity;
+import com.cyber.punk.entity.sci_fi_decoration.SciFiBenchEntity;
 import com.cyber.punk.util.AbstractCustomBlock;
 import com.cyber.punk.util.Registry;
 import com.google.common.collect.ImmutableMap;
@@ -22,16 +23,16 @@ import net.minecraft.world.World;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class OakBench extends AbstractCustomBlock {
-    public OakBench() {
+public class SciFiBench extends AbstractCustomBlock {
+    public SciFiBench() {
         super(Properties.of(
-                        Material.WOOD)
+                        Material.STONE)
                 .strength(2f,4.0f)
                 .noOcclusion());
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-9, 0, 0, 25, 24, 19)
+            Block.box(-9, 0, 0, 25, 23, 16)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -47,13 +48,14 @@ public class OakBench extends AbstractCustomBlock {
 
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new OakBenchEntity();
+        return new SciFiBenchEntity();
     }
 
     @Override
     protected Map<Direction, VoxelShape> getShapes() {
         return SHAPES;
     }
+
     @Override
     protected boolean canPlaceBlockAt(World world, BlockPos pos, Direction facing) {
         BlockPos[] positions;

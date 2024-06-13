@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/map_hologram" },
+    "facing=south": { "model": "cyber_decoration:block/map_hologram", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/map_hologram", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/map_hologram", "y":  90}
+  }
+}

@@ -2,8 +2,10 @@ package com.cyber.punk.util;
 
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.custom_block.dungeon_decoration.*;
+import com.cyber.punk.custom_block.sci_fi_decoration.*;
 import com.cyber.punk.custom_block.summer_decoration.*;
 import com.cyber.punk.dungeon_decoration.*;
+import com.cyber.punk.just_block.sci_fi_decoration.*;
 import com.cyber.punk.just_block.summer_decoration.OakLog;
 import com.cyber.punk.just_block.summer_decoration.OakPlant;
 import com.cyber.punk.just_block.summer_decoration.OakStool;
@@ -35,7 +37,15 @@ public class Registry {
     // Фантом блок
     public static final RegistryObject<Block> BOUNDING_BLOCK = BLOCKS.register("bounding_block", BoundingBlock::new);
 
-    // Обычные Блоки
+    // Блоки
+
+    public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR_LONG = BLOCKS.register("dungeon_wood_chair_long", DungeonWoodChairLong::new);
+    public static final RegistryObject<Block> DUNGEON_WOOD_THRONE = BLOCKS.register("dungeon_wood_throne", DungeonWoodThrone::new);
+    public static final RegistryObject<Block> DUNGEON_FLAG = BLOCKS.register("dungeon_flag", DungeonFlag::new);
+    public static final RegistryObject<Block> DUNGEON_SKELETON = BLOCKS.register("dungeon_skeleton", DungeonSkeleton::new);
+    public static final RegistryObject<Block> DUNGEON_SKELETON_SLEEP = BLOCKS.register("dungeon_skeleton_sleep", DungeonSkeletonSleep::new);
+    public static final RegistryObject<Block> DUNGEON_SKELETON_HEAD = BLOCKS.register("dungeon_skeleton_head", DungeonSkeletonHead::new);
+    public static final RegistryObject<Block> DUNGEON_HANG_FLAG = BLOCKS.register("dungeon_hang_flag", DungeonHangFlag::new);
     public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR = BLOCKS.register("dungeon_wood_chair", DungeonWoodChair::new);
     public static final RegistryObject<Block> DUNGEON_DECORATE_HEADS = BLOCKS.register("dungeon_decorate_heads", DungeonDecorateHeads::new);
     public static final RegistryObject<Block> COPPER_BLOCK = BLOCKS.register("copper_block", CopperBlock::new);
@@ -75,12 +85,81 @@ public class Registry {
     public static final RegistryObject<Block> SCARE_CROW = BLOCKS.register("scare_crow", ScareCrow::new);
     public static final RegistryObject<Block> OAK_DEAD_TREE = BLOCKS.register("oak_dead_tree", OakDeadTree::new);
     public static final RegistryObject<Block> FROG = BLOCKS.register("frog", Frog::new);
+    public static final RegistryObject<Block> GRAFFITI = BLOCKS.register("graffiti", Graffiti::new);
+    public static final RegistryObject<Block> MONITOR = BLOCKS.register("monitor", Monitor::new);
+    public static final RegistryObject<Block> SCI_FI_PLANT = BLOCKS.register("sci_fi_plant", SciFiPlant::new);
+    public static final RegistryObject<Block> SCI_FI_TV = BLOCKS.register("sci_fi_tv", SciFiTV::new);
+    public static final RegistryObject<Block> SCI_FI_LAMP = BLOCKS.register("sci_fi_lamp", SciFiLamp::new);
+    public static final RegistryObject<Block> SCI_FI_WALL_LAMP = BLOCKS.register("sci_fi_wall_lamp", SciFiWallLamp::new);
+    public static final RegistryObject<Block> SCI_FI_RADIO = BLOCKS.register("sci_fi_radio", SciFiRadio::new);
+    public static final RegistryObject<Block> SCI_FI_TABLE = BLOCKS.register("sci_fi_table", SciFiTable::new);
+    public static final RegistryObject<Block> SCI_FI_TABLET = BLOCKS.register("sci_fi_tablet", SciFiTablet::new);
+    public static final RegistryObject<Block> SCI_FI_WEAPON = BLOCKS.register("sci_fi_weapon", SciFiWeapon::new);
+    public static final RegistryObject<Block> SCI_FI_BED = BLOCKS.register("sci_fi_bed", SciFiBed::new);
+    public static final RegistryObject<Block> SCI_FI_BENCH = BLOCKS.register("sci_fi_bench", SciFiBench::new);
+    public static final RegistryObject<Block> SCI_FI_CC_TV = BLOCKS.register("sci_fi_cc_tv", SciFiCCTV::new);
+    public static final RegistryObject<Block> SCI_FI_BIN = BLOCKS.register("sci_fi_bin", SciFiBin::new);
+    public static final RegistryObject<Block> SCI_FI_CHAIR = BLOCKS.register("sci_fi_chair", SciFiChair::new);
+    public static final RegistryObject<Block> SCI_FI_RED_CHAIR = BLOCKS.register("sci_fi_red_chair", SciFiRedChair::new);
+    public static final RegistryObject<Block> SODA_STORAGE = BLOCKS.register("soda_storage", SodaStorage::new);
+    public static final RegistryObject<Block> MAP_HOLOGRAM = BLOCKS.register("map_hologram", MapHologram::new);
     public static final RegistryObject<Block> DUNGEON_CAGE_WITH_BONE = BLOCKS.register("dungeon_cage_with_bone", DungeonCageWithBone::new);
     public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR_WITH_BONE = BLOCKS.register("dungeon_wood_chair_with_bone", DungeonWoodChairWithBone::new);
     public static final RegistryObject<Block> DUNGEON_DECORATE_SWORD_AND_BONE = BLOCKS.register("dungeon_decorate_sword_and_bone", DungeonDecorateSwordAndBone::new);
 
 
-    // Обычные блоки предметы
+    // Блоки предметы
+
+    public static final RegistryObject<BlockItem> DUNGEON_WOOD_CHAIR_LONG_ITEM = ITEMS.register("dungeon_wood_chair_long",
+            () -> new BlockItem(DUNGEON_WOOD_CHAIR_LONG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> GRAFFITI_ITEM = ITEMS.register("graffiti",
+            () -> new BlockItem(GRAFFITI.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_PLANT_ITEM = ITEMS.register("sci_fi_plant",
+            () -> new BlockItem(SCI_FI_PLANT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_TV_ITEM = ITEMS.register("sci_fi_tv",
+            () -> new BlockItem(SCI_FI_TV.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_CC_TV_ITEM = ITEMS.register("sci_fi_cc_tv",
+            () -> new BlockItem(SCI_FI_CC_TV.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BIN_ITEM = ITEMS.register("sci_fi_bin",
+            () -> new BlockItem(SCI_FI_BIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_CHAIR_ITEM = ITEMS.register("sci_fi_chair",
+            () -> new BlockItem(SCI_FI_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_RED_CHAIR_ITEM = ITEMS.register("sci_fi_red_chair",
+            () -> new BlockItem(SCI_FI_RED_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BED_ITEM = ITEMS.register("sci_fi_bed",
+            () -> new BlockItem(SCI_FI_BED.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BENCH_ITEM = ITEMS.register("sci_fi_bench",
+            () -> new BlockItem(SCI_FI_BENCH.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_LAMP_ITEM = ITEMS.register("sci_fi_lamp",
+            () -> new BlockItem(SCI_FI_LAMP.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_WEAPON_ITEM = ITEMS.register("sci_fi_weapon",
+            () -> new BlockItem(SCI_FI_WEAPON.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_WALL_LAMP_ITEM = ITEMS.register("sci_fi_wall_lamp",
+            () -> new BlockItem(SCI_FI_WALL_LAMP.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_RADIO_ITEM = ITEMS.register("sci_fi_radio",
+            () -> new BlockItem(SCI_FI_RADIO.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_TABLE_ITEM = ITEMS.register("sci_fi_table",
+            () -> new BlockItem(SCI_FI_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_TABLET_ITEM = ITEMS.register("sci_fi_tablet",
+            () -> new BlockItem(SCI_FI_TABLET.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SODA_STORAGE_ITEM = ITEMS.register("soda_storage",
+            () -> new BlockItem(SODA_STORAGE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> MAP_HOLOGRAM_ITEM = ITEMS.register("map_hologram",
+            () -> new BlockItem(MAP_HOLOGRAM.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> MONITOR_ITEM = ITEMS.register("monitor",
+            () -> new BlockItem(MONITOR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_WOOD_THRONE_ITEM = ITEMS.register("dungeon_wood_throne",
+            () -> new BlockItem(DUNGEON_WOOD_THRONE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_HEAD_ITEM = ITEMS.register("dungeon_skeleton_head",
+            () -> new BlockItem(DUNGEON_SKELETON_HEAD.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_SLEEP_ITEM = ITEMS.register("dungeon_skeleton_sleep",
+            () -> new BlockItem(DUNGEON_SKELETON_SLEEP.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_FLAG_ITEM = ITEMS.register("dungeon_flag",
+            () -> new BlockItem(DUNGEON_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_ITEM = ITEMS.register("dungeon_skeleton",
+            () -> new BlockItem(DUNGEON_SKELETON.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> DUNGEON_HANG_FLAG_ITEM = ITEMS.register("dungeon_hang_flag",
+            () -> new BlockItem(DUNGEON_HANG_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_DECORATE_GOLDBARS_WITH_COIN_ITEM = ITEMS.register("dungeon_decorate_goldbars_with_coin",
             () -> new BlockItem(DUNGEON_DECORATE_GOLDBARS_WITH_COIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DUNGEON_TORCH_ITEM = ITEMS.register("dungeon_torch",
@@ -149,7 +228,6 @@ public class Registry {
             () -> new BlockItem(CRIMSON_HANGING_SIGN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> DECORATED_POT_ITEM = ITEMS.register("decorated_pot",
             () -> new BlockItem(DECORATED_POT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-
     public static final RegistryObject<BlockItem> COPPER_BLOCK_ITEM = ITEMS.register("copper_block",
             () -> new BlockItem(COPPER_BLOCK.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> EXPOSED_COPPER_BLOCK_ITEM = ITEMS.register("exposed_copper_block",
@@ -522,30 +600,6 @@ public class Registry {
     public static final RegistryObject<BlockItem> CUT_OXIDIZED_COPPER_VERTICAL_SLAB_ITEM = ITEMS.register("cut_oxidized_copper_vertical_slab",
             () -> new BlockItem(CUT_OXIDIZED_COPPER_VERTICAL_SLAB.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
 
-    // Блоки использующие Bounding
-    public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR_LONG = BLOCKS.register("dungeon_wood_chair_long", DungeonWoodChairLong::new);
-    public static final RegistryObject<Block> DUNGEON_WOOD_THRONE = BLOCKS.register("dungeon_wood_throne", DungeonWoodThrone::new);
-    public static final RegistryObject<Block> DUNGEON_FLAG = BLOCKS.register("dungeon_flag", DungeonFlag::new);
-    public static final RegistryObject<Block> DUNGEON_SKELETON = BLOCKS.register("dungeon_skeleton", DungeonSkeleton::new);
-    public static final RegistryObject<Block> DUNGEON_SKELETON_SLEEP = BLOCKS.register("dungeon_skeleton_sleep", DungeonSkeletonSleep::new);
-    public static final RegistryObject<Block> DUNGEON_SKELETON_HEAD = BLOCKS.register("dungeon_skeleton_head", DungeonSkeletonHead::new);
-    public static final RegistryObject<Block> DUNGEON_HANG_FLAG = BLOCKS.register("dungeon_hang_flag", DungeonHangFlag::new);
-
-    // Блоки предметы использующие Bounding
-    public static final RegistryObject<BlockItem> DUNGEON_WOOD_CHAIR_LONG_ITEM = ITEMS.register("dungeon_wood_chair_long",
-            () -> new BlockItem(DUNGEON_WOOD_CHAIR_LONG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-    public static final RegistryObject<BlockItem> DUNGEON_WOOD_THRONE_ITEM = ITEMS.register("dungeon_wood_throne",
-            () -> new BlockItem(DUNGEON_WOOD_THRONE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_HEAD_ITEM = ITEMS.register("dungeon_skeleton_head",
-            () -> new BlockItem(DUNGEON_SKELETON_HEAD.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_SLEEP_ITEM = ITEMS.register("dungeon_skeleton_sleep",
-            () -> new BlockItem(DUNGEON_SKELETON_SLEEP.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-    public static final RegistryObject<BlockItem> DUNGEON_FLAG_ITEM = ITEMS.register("dungeon_flag",
-            () -> new BlockItem(DUNGEON_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-    public static final RegistryObject<BlockItem> DUNGEON_SKELETON_ITEM = ITEMS.register("dungeon_skeleton",
-            () -> new BlockItem(DUNGEON_SKELETON.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
-    public static final RegistryObject<BlockItem> DUNGEON_HANG_FLAG_ITEM = ITEMS.register("dungeon_hang_flag",
-            () -> new BlockItem(DUNGEON_HANG_FLAG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
 
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> blockSupplier) {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, blockSupplier);

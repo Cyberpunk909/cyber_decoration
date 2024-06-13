@@ -1,8 +1,8 @@
 package com.cyber.punk.util;
 
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
-import com.cyber.punk.custom_block.summer_decoration.Frog;
 import com.cyber.punk.entity.dungeon_decoration.*;
+import com.cyber.punk.entity.sci_fi_decoration.*;
 import com.cyber.punk.entity.summer_decoration.*;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
@@ -25,6 +25,16 @@ public class Entites {
     public static final RegistryObject<TileEntityType<OakChairEntity>> OAK_CHAIR = register(Registry.OAK_CHAIR, OakChairEntity::new);
     public static final RegistryObject<TileEntityType<OakTreeEntity>> OAK_TREE = register(Registry.OAK_TREE, OakTreeEntity::new);
     public static final RegistryObject<TileEntityType<FrogEntity>> FROG = register(Registry.FROG, FrogEntity::new);
+    public static final RegistryObject<TileEntityType<GraffitiEntity>> GRAFFITI = register(Registry.GRAFFITI, GraffitiEntity::new);
+    public static final RegistryObject<TileEntityType<MapHologramEntity>> MAP_HOLOGRAM = register(Registry.MAP_HOLOGRAM, MapHologramEntity::new);
+    public static final RegistryObject<TileEntityType<MonitorEntity>> MONITOR = register(Registry.MONITOR, MonitorEntity::new);
+    public static final RegistryObject<TileEntityType<SciFiPlantEntity>> SCI_FI_PLANT = register(Registry.SCI_FI_PLANT, SciFiPlantEntity::new);
+    public static final RegistryObject<TileEntityType<SodaStorageEntity>> SODA_STORAGE = register(Registry.SODA_STORAGE, SodaStorageEntity::new);
+    public static final RegistryObject<TileEntityType<SciFiWeaponEntity>> SCI_FI_WEAPON = register(Registry.SCI_FI_WEAPON, SciFiWeaponEntity::new);
+    public static final RegistryObject<TileEntityType<SciFiBedEntity>> SCI_FI_BED = register(Registry.SCI_FI_BED, SciFiBedEntity::new);
+    public static final RegistryObject<TileEntityType<SciFiBenchEntity>> SCI_FI_BENCH = register(Registry.SCI_FI_BENCH, SciFiBenchEntity::new);
+    public static final RegistryObject<TileEntityType<SciFiRedChairEntity>> SCI_FI_RED_CHAIR = register(Registry.SCI_FI_RED_CHAIR, SciFiRedChairEntity::new);
+    public static final RegistryObject<TileEntityType<SciFiChairEntity>> SCI_FI_CHAIR = register(Registry.SCI_FI_CHAIR, SciFiChairEntity::new);
     public static final RegistryObject<TileEntityType<ScareCrowEntity>> SCARE_CROW = register(Registry.SCARE_CROW, ScareCrowEntity::new);
     public static final RegistryObject<TileEntityType<OakDeadTreeEntity>> OAK_DEAD_TREE = register(Registry.OAK_DEAD_TREE, OakDeadTreeEntity::new);
     public static final RegistryObject<TileEntityType<OakPlankHorizontalEntity>> OAK_PLANK_HORIZONTAL = register(Registry.OAK_PLANK_HORIZONTAL, OakPlankHorizontalEntity::new);
