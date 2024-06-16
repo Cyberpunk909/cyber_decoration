@@ -7,9 +7,9 @@
 	},
 	"elements": [
 		{
-			"from": [12.75, 0, -11],
-			"to": [17.75, 2, 21],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [5.75, 0, -2]},
+			"from": [8.75, 0, -3],
+			"to": [13.75, 2, 29],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [1.75, 0, 6]},
 			"faces": {
 				"north": {"uv": [11.33333, 0, 12, 1.66667], "rotation": 90, "texture": "#0"},
 				"east": {"uv": [0, 1.66667, 10.66667, 2.33333], "texture": "#0"},
@@ -20,9 +20,9 @@
 			}
 		},
 		{
-			"from": [4.75, 0, -6],
-			"to": [9.75, 2, 24],
-			"rotation": {"angle": -22.5, "axis": "y", "origin": [5.75, 0, -3]},
+			"from": [0.75, 0, 2],
+			"to": [5.75, 2, 32],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [1.75, 0, 5]},
 			"faces": {
 				"north": {"uv": [11.33333, 0, 12, 1.66667], "rotation": 90, "texture": "#0"},
 				"east": {"uv": [0, 1.66667, 10.66667, 2.33333], "texture": "#0"},
@@ -33,9 +33,9 @@
 			}
 		},
 		{
-			"from": [6, 4, -7],
-			"to": [11, 6, 23],
-			"rotation": {"angle": 0, "axis": "z", "origin": [5.75, 0, 1]},
+			"from": [2, 4, 1],
+			"to": [7, 6, 31],
+			"rotation": {"angle": 0, "axis": "z", "origin": [1.75, 0, 9]},
 			"faces": {
 				"north": {"uv": [11.33333, 0, 12, 1.66667], "rotation": 90, "texture": "#0"},
 				"east": {"uv": [0, 1.66667, 10.66667, 2.33333], "texture": "#0"},
@@ -46,9 +46,9 @@
 			}
 		},
 		{
-			"from": [-11.25, 2, 6.25],
-			"to": [20.75, 4, 11.25],
-			"rotation": {"angle": 22.5, "axis": "y", "origin": [5.75, 0, 1]},
+			"from": [-15.25, 2, 14.25],
+			"to": [16.75, 4, 19.25],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [1.75, 0, 9]},
 			"faces": {
 				"north": {"uv": [0, 2.33333, 10.66667, 3], "texture": "#0"},
 				"east": {"uv": [11.33333, 0, 12, 1.66667], "rotation": 90, "texture": "#0"},
@@ -85,11 +85,11 @@
 		},
 		"gui": {
 			"rotation": [21.75, 0, 0],
-			"translation": [0.25, 1.25, 0],
+			"translation": [2, 2, 0],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"head": {
-			"translation": [0, 8.75, 0.5],
+			"translation": [0.75, 8.75, -2.5],
 			"scale": [0.3, 0.3, 0.3]
 		},
 		"fixed": {
@@ -99,7 +99,7 @@
 	},
 	"groups": [
 		{
-			"name": "VoxelShapes",
+			"name": "group",
 			"origin": [5.75, 0, 1],
 			"color": 0,
 			"children": [0, 1, 2, 3]

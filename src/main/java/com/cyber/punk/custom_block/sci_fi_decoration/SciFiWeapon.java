@@ -3,7 +3,7 @@ package com.cyber.punk.custom_block.sci_fi_decoration;
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.bounding_block.BoundingBlockEntity;
 import com.cyber.punk.bounding_block.VoxelUtil;
-import com.cyber.punk.entity.dungeon_decoration.DungeonSkeletonSleepEntity;
+import com.cyber.punk.entity.sci_fi_decoration.SciFiWeaponEntity;
 import com.cyber.punk.util.AbstractCustomBlock;
 import com.cyber.punk.util.Registry;
 import com.google.common.collect.ImmutableMap;
@@ -31,32 +31,32 @@ public class SciFiWeapon extends AbstractCustomBlock {
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(3.5, 14, 12.5, 12.5, 16, 14.5),
-            Block.box(2.5, 13, 11.5, 3.5, 17, 15.5),
-            Block.box(0.5, 14, 12.5, 2.5, 16, 14.5),
-            Block.box(-6.5, 14.25, 12.75, 0.5, 15.75, 14.25),
-            Block.box(12.5, 13, 11.5, 13.5, 17, 15.5),
-            Block.box(13.5, 14, 12.5, 15.5, 16, 14.5),
-            Block.box(15.5, 14.25, 12.75, 22.5, 15.75, 14.25),
-            Block.box(-6, 4, 13.5, 10, 5, 14.5),
-            Block.box(10, 3.5, 13.5, 12, 5.5, 14.5),
-            Block.box(12, 3.5, 13, 19, 5.5, 15),
-            Block.box(5, 12, 15, 11, 14, 16),
-            Block.box(5, 2, 15, 11, 4, 16),
-            Block.box(3.5, 10, 13, 4.5, 14, 15),
-            Block.box(3.5, 13.90165, 11.7448, 4.5, 15.90165, 12.7448),
-            Block.box(3.51, 12.25, 14.5, 4.49, 15.25, 15.5),
-            Block.box(11.5, 10, 13, 12.5, 14, 15),
-            Block.box(11.51, 12.25, 14.5, 12.49, 15.25, 15.5),
-            Block.box(11.5, 13.90165, 11.7448, 12.5, 15.90165, 12.7448),
-            Block.box(3.5, 0, 13, 4.5, 4, 15),
-            Block.box(3.5, 3.90165, 11.7448, 4.5, 5.90165, 12.7448),
-            Block.box(3.51, 2.25, 14.5, 4.49, 5.25, 15.5),
-            Block.box(11.5, 0, 13, 12.5, 4, 15),
-            Block.box(11.51, 2.25, 14.5, 12.49, 5.25, 15.5),
-            Block.box(11.5, 3.90165, 11.7448, 12.5, 5.90165, 12.7448),
-            Block.box(3, 0, 15, 5, 16, 16),
-            Block.box(11, 0, 15, 13, 16, 16)
+            Block.box(12.5, 14, 12.5, 21.5, 16, 14.5),
+            Block.box(11.5, 13, 11.5, 12.5, 17, 15.5),
+            Block.box(9.5, 14, 12.5, 11.5, 16, 14.5),
+            Block.box(2.5, 14.25, 12.75, 9.5, 15.75, 14.25),
+            Block.box(21.5, 13, 11.5, 22.5, 17, 15.5),
+            Block.box(22.5, 14, 12.5, 24.5, 16, 14.5),
+            Block.box(24.5, 14.25, 12.75, 31.5, 15.75, 14.25),
+            Block.box(3, 4, 13.5, 19, 5, 14.5),
+            Block.box(19, 3.5, 13.5, 21, 5.5, 14.5),
+            Block.box(21, 3.5, 13, 28, 5.5, 15),
+            Block.box(14, 12, 15, 20, 14, 16),
+            Block.box(14, 2, 15, 20, 4, 16),
+            Block.box(12.5, 10, 13, 13.5, 14, 15),
+            Block.box(12.5, 13.90165, 11.7448, 13.5, 15.90165, 12.7448),
+            Block.box(12.51, 12.25, 14.5, 13.49, 15.25, 15.5),
+            Block.box(20.5, 10, 13, 21.5, 14, 15),
+            Block.box(20.509999999999998, 12.25, 14.5, 21.490000000000002, 15.25, 15.5),
+            Block.box(20.5, 13.90165, 11.7448, 21.5, 15.90165, 12.7448),
+            Block.box(12.5, 0, 13, 13.5, 4, 15),
+            Block.box(12.5, 3.90165, 11.7448, 13.5, 5.90165, 12.7448),
+            Block.box(12.51, 2.25, 14.5, 13.49, 5.25, 15.5),
+            Block.box(20.5, 0, 13, 21.5, 4, 15),
+            Block.box(20.509999999999998, 2.25, 14.5, 21.490000000000002, 5.25, 15.5),
+            Block.box(20.5, 3.90165, 11.7448, 21.5, 5.90165, 12.7448),
+            Block.box(12, 0, 15, 14, 16, 16),
+            Block.box(20, 0, 15, 22, 16, 16)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -72,7 +72,7 @@ public class SciFiWeapon extends AbstractCustomBlock {
 
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new DungeonSkeletonSleepEntity();
+        return new SciFiWeaponEntity();
     }
 
     @Override
@@ -86,23 +86,19 @@ public class SciFiWeapon extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).relative(Direction.WEST),};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),  pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
         }
@@ -123,23 +119,19 @@ public class SciFiWeapon extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).relative(Direction.WEST),};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),  pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
         }
@@ -165,23 +157,19 @@ public class SciFiWeapon extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).relative(Direction.WEST),};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),  pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
         }

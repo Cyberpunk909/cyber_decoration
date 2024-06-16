@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/fire_hydrant" },
+    "facing=south": { "model": "cyber_decoration:block/fire_hydrant", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/fire_hydrant", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/fire_hydrant", "y":  90}
+  }
+}

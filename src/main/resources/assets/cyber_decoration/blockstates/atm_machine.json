@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/atm_machine" },
+    "facing=south": { "model": "cyber_decoration:block/atm_machine", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/atm_machine", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/atm_machine", "y":  90}
+  }
+}

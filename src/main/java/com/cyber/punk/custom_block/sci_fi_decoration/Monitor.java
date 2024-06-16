@@ -32,9 +32,9 @@ public class Monitor extends AbstractCustomBlock {
                 .noOcclusion());
     }
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(0, -16, 0, 16, 21, 16),
-            Block.box(-6, 1, -6, 22, 21, 0)
-    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).map(voxelShape -> voxelShape.move(0, 1, 0)).get();
+            Block.box(1, 0, 4, 15, 24, 16),
+                    Block.box(-3, 12.5, -1, 19, 28.5, 4)
+    ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
     private static final VoxelShape SHAPE_S = VoxelUtil.rotateShape(Direction.NORTH, Direction.SOUTH, SHAPE_N);
@@ -63,44 +63,24 @@ public class Monitor extends AbstractCustomBlock {
             case NORTH:
             default:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.NORTH).relative(Direction.WEST),
                         pos.relative(Direction.UP).relative(Direction.NORTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.NORTH),};
                 break;
             case SOUTH:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH).relative(Direction.WEST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
             case WEST:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.WEST).relative(Direction.NORTH),
                         pos.relative(Direction.UP).relative(Direction.WEST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.WEST)};
                 break;
             case EAST:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.EAST).relative(Direction.NORTH),
                         pos.relative(Direction.UP).relative(Direction.EAST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
@@ -124,44 +104,24 @@ public class Monitor extends AbstractCustomBlock {
             case NORTH:
             default:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.NORTH).relative(Direction.WEST),
                         pos.relative(Direction.UP).relative(Direction.NORTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.NORTH),};
                 break;
             case SOUTH:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH).relative(Direction.WEST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
             case WEST:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.WEST).relative(Direction.NORTH),
                         pos.relative(Direction.UP).relative(Direction.WEST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.WEST)};
                 break;
             case EAST:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.EAST).relative(Direction.NORTH),
                         pos.relative(Direction.UP).relative(Direction.EAST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
@@ -190,44 +150,24 @@ public class Monitor extends AbstractCustomBlock {
             case NORTH:
             default:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.NORTH).relative(Direction.WEST),
                         pos.relative(Direction.UP).relative(Direction.NORTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.NORTH),};
                 break;
             case SOUTH:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH).relative(Direction.WEST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
             case WEST:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.WEST).relative(Direction.NORTH),
                         pos.relative(Direction.UP).relative(Direction.WEST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.WEST)};
                 break;
             case EAST:
                 positions = new BlockPos[]{ pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.EAST).relative(Direction.NORTH),
                         pos.relative(Direction.UP).relative(Direction.EAST).relative(Direction.SOUTH),
                         pos.relative(Direction.UP).relative(Direction.EAST)};

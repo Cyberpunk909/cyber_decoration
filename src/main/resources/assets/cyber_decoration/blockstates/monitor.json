@@ -1,8 +1,8 @@
 {
   "variants": {
-    "facing=north": { "model": "cyber_decoration:block/monitor_block" },
-    "facing=south": { "model": "cyber_decoration:block/monitor_block", "y":  180},
-    "facing=west": { "model": "cyber_decoration:block/monitor_block", "y":  270},
-    "facing=east": { "model": "cyber_decoration:block/monitor_block", "y":  90}
+    "facing=north": { "model": "cyber_decoration:block/monitor" },
+    "facing=south": { "model": "cyber_decoration:block/monitor", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/monitor", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/monitor", "y":  90}
   }
 }

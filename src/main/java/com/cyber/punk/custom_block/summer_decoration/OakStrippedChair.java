@@ -31,10 +31,10 @@ public class OakStrippedChair extends AbstractCustomBlock {
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-7.99, 5.99, 3, 7.99, 7.99, 13),
-            Block.box(19.009999999999998, -0.01, 4, 21.990000000000002, 5.99, 12),
-            Block.box(-5.99, -0.01, 4, -3.01, 5.99, 12),
-            Block.box(8.01, 5.99, 3, 23.990000000000002, 7.99, 13)
+            Block.box(0.009999999999999787, 5.99, 3, 15.99, 7.99, 13),
+            Block.box(27.01, -0.01, 4, 29.99, 5.99, 12),
+            Block.box(2.01, -0.01, 4, 4.99, 5.99, 12),
+            Block.box(16.009999999999998, 5.99, 3, 31.99, 7.99, 13)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -64,16 +64,16 @@ public class OakStrippedChair extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH)};
                 break;
         }
 
@@ -93,16 +93,16 @@ public class OakStrippedChair extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH)};
                 break;
         }
 
@@ -127,16 +127,16 @@ public class OakStrippedChair extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH)};
                 break;
         }
 

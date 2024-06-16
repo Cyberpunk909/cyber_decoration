@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/rat_black" },
+    "facing=south": { "model": "cyber_decoration:block/rat_black", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/rat_black", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/rat_black", "y":  90}
+  }
+}

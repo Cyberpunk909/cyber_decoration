@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/mail_box" },
+    "facing=south": { "model": "cyber_decoration:block/mail_box", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/mail_box", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/mail_box", "y":  90}
+  }
+}

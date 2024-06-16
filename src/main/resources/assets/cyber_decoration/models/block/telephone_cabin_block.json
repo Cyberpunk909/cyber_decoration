@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_decoration:block/telephone_cabin",
+    "transform": {
+        "translation": [ 0, 1, 0 ]
+    }
+}

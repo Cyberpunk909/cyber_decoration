@@ -1,10 +1,14 @@
 package com.cyber.punk.util;
 
 import com.cyber.punk.bounding_block.BoundingBlock;
+import com.cyber.punk.custom_block.city_streets.*;
 import com.cyber.punk.custom_block.dungeon_decoration.*;
+import com.cyber.punk.custom_block.office_decoration.*;
 import com.cyber.punk.custom_block.sci_fi_decoration.*;
 import com.cyber.punk.custom_block.summer_decoration.*;
-import com.cyber.punk.dungeon_decoration.*;
+import com.cyber.punk.just_block.city_streets.*;
+import com.cyber.punk.just_block.dungeon_decoration.*;
+import com.cyber.punk.just_block.office_decoration.*;
 import com.cyber.punk.just_block.sci_fi_decoration.*;
 import com.cyber.punk.just_block.summer_decoration.OakLog;
 import com.cyber.punk.just_block.summer_decoration.OakPlant;
@@ -100,9 +104,99 @@ public class Registry {
     public static final RegistryObject<Block> SCI_FI_CC_TV = BLOCKS.register("sci_fi_cc_tv", SciFiCCTV::new);
     public static final RegistryObject<Block> SCI_FI_BIN = BLOCKS.register("sci_fi_bin", SciFiBin::new);
     public static final RegistryObject<Block> SCI_FI_CHAIR = BLOCKS.register("sci_fi_chair", SciFiChair::new);
+    public static final RegistryObject<Block> SCI_FI_CHEST = BLOCKS.register("sci_fi_chest", SciFiChest::new);
+    public static final RegistryObject<Block> SCI_FI_CRATE = BLOCKS.register("sci_fi_crate", SciFiCrate::new);
+    public static final RegistryObject<Block> SCI_FI_GATE = BLOCKS.register("sci_fi_gate", SciFiGate::new);
+    public static final RegistryObject<Block> SCI_FI_VERTICAL_SIGN_NIGHT = BLOCKS.register("sci_fi_vertical_sign_night", SciFiVerticalSignNight::new);
+    public static final RegistryObject<Block> SCI_FI_SIGN_NIGHT = BLOCKS.register("sci_fi_sign_night", SciFiSignNight::new);
+    public static final RegistryObject<Block> SCI_FI_SIGN_SUN = BLOCKS.register("sci_fi_sign_sun", SciFiSignSun::new);
+    public static final RegistryObject<Block> SCI_FI_BIG_TABLE = BLOCKS.register("sci_fi_big_table", SciFiBigTable::new);
+    public static final RegistryObject<Block> SCI_FI_BIG_VERTICAL_TABLE = BLOCKS.register("sci_fi_big_vertical_table", SciFiBigVerticalTable::new);
+    public static final RegistryObject<Block> SCI_FI_BIG_GLASS_TABLE = BLOCKS.register("sci_fi_big_glass_table", SciFiBigGlassTable::new);
+    public static final RegistryObject<Block> SCI_FI_LAMP_PILLAR = BLOCKS.register("sci_fi_lamp_pillar", SciFiLampPillar::new);
+    public static final RegistryObject<Block> SCI_FI_VERTICAL_CABLE = BLOCKS.register("sci_fi_vertical_cable", SciFiVerticalCable::new);
+    public static final RegistryObject<Block> SCI_FI_HORIZONTAL_WIRE = BLOCKS.register("sci_fi_horizontal_wire", SciFiHorizontalWire::new);
+    public static final RegistryObject<Block> SCI_FI_VERTICAL_WIRE = BLOCKS.register("sci_fi_vertical_wire", SciFiVerticalWire::new);
+    public static final RegistryObject<Block> SCI_FI_TRASH = BLOCKS.register("sci_fi_trash", SciFiTrash::new);
+    public static final RegistryObject<Block> SCI_FI_BARRIER = BLOCKS.register("sci_fi_barrier", SciFiBarrier::new);
+    public static final RegistryObject<Block> SCI_FI_YELLOW_BARRIER = BLOCKS.register("sci_fi_yellow_barrier", SciFiYellowBarrier::new);
+    public static final RegistryObject<Block> SCI_FI_WARNING_SIGN = BLOCKS.register("sci_fi_warning_sign", SciFiWarningSign::new);
+    public static final RegistryObject<Block> SCI_FI_VARIOUS_TRASH = BLOCKS.register("sci_fi_various_trash", SciFiVariousTrash::new);
+    public static final RegistryObject<Block> SCI_FI_LIGHT_PILLAR = BLOCKS.register("sci_fi_light_pillar", SciFiLightPillar::new);
+    public static final RegistryObject<Block> SCI_FI_GENERATOR = BLOCKS.register("sci_fi_generator", SciFiGenerator::new);
     public static final RegistryObject<Block> SCI_FI_RED_CHAIR = BLOCKS.register("sci_fi_red_chair", SciFiRedChair::new);
+    public static final RegistryObject<Block> SCI_FI_ORANGE_CHAIR = BLOCKS.register("sci_fi_orange_chair", SciFiOrangeChair::new);
+    public static final RegistryObject<Block> SCI_FI_BLACK_CHAIR = BLOCKS.register("sci_fi_black_chair", SciFiBlackChair::new);
+    public static final RegistryObject<Block> SCI_FI_STOOL = BLOCKS.register("sci_fi_stool", SciFiStool::new);
+    public static final RegistryObject<Block> TRAFFIC_CONE = BLOCKS.register("traffic_cone", TrafficCone::new);
+    public static final RegistryObject<Block> TELEPHONE_CABIN = BLOCKS.register("telephone_cabin", TelephoneCabin::new);
+    public static final RegistryObject<Block> SCI_FI_BIG_BIN = BLOCKS.register("sci_fi_big_bin", SciFiBigBin::new);
+    public static final RegistryObject<Block> SCI_FI_SMALL_BIN = BLOCKS.register("sci_fi_small_bin", SciFiSmallBin::new);
     public static final RegistryObject<Block> SODA_STORAGE = BLOCKS.register("soda_storage", SodaStorage::new);
+    public static final RegistryObject<Block> TRAFFIC_LIGHT = BLOCKS.register("traffic_light", TrafficLight::new);
+    public static final RegistryObject<Block> TRASH_CAN = BLOCKS.register("trash_can", TrashCan::new);
+    public static final RegistryObject<Block> STREET_LIGHT_BIG = BLOCKS.register("street_light_big", StreetLightBig::new);
+    public static final RegistryObject<Block> STREET_LIGHT_MODERN = BLOCKS.register("street_light_modern", StreetLightModern::new);
+    public static final RegistryObject<Block> STREET_LIGHT_MODERN_DOUBLE = BLOCKS.register("street_light_modern_double", StreetLightModernDouble::new);
+    public static final RegistryObject<Block> TRANSIT_FENCE = BLOCKS.register("transit_fence", TransitFence::new);
+    public static final RegistryObject<Block> TRASH_CONTAINER = BLOCKS.register("trash_container", TrashContainer::new);
+    public static final RegistryObject<Block> TRASH_CONTAINER_OPEN = BLOCKS.register("trash_container_open", TrashContainerOpen::new);
+    public static final RegistryObject<Block> AIR_CONDITIONER = BLOCKS.register("air_conditioner", AirConditioner::new);
+    public static final RegistryObject<Block> VEHICLE_BARRIER = BLOCKS.register("vehicle_barrier", VehicleBarrier::new);
+    public static final RegistryObject<Block> ATM_MACHINE = BLOCKS.register("atm_machine", AtmMachine::new);
+    public static final RegistryObject<Block> MAIL_BOX = BLOCKS.register("mail_box", MailBox::new);
+    public static final RegistryObject<Block> NEWSPAPER_READ = BLOCKS.register("newspaper_read", NewspaperRead::new);
+    public static final RegistryObject<Block> NEWSPAPER_STACK = BLOCKS.register("newspaper_stack", NewspaperStack::new);
+    public static final RegistryObject<Block> NEWSPAPER_VENDING_MACHINE = BLOCKS.register("newspaper_vending_machine", NewspaperVendingMachine::new);
+    public static final RegistryObject<Block> PIZZA_BOX = BLOCKS.register("pizza_box", PizzaBox::new);
+    public static final RegistryObject<Block> PIZZA_BOX_02 = BLOCKS.register("pizza_box_02", PizzaBox02::new);
+    public static final RegistryObject<Block> CITY_BENCH = BLOCKS.register("city_bench", CityBench::new);
+    public static final RegistryObject<Block> BUS_SIGN = BLOCKS.register("bus_sign", BusSign::new);
+    public static final RegistryObject<Block> BUS_STATION = BLOCKS.register("bus_station", BusStation::new);
+    public static final RegistryObject<Block> RAT_BROWN = BLOCKS.register("rat_brown", RatBrown::new);
+    public static final RegistryObject<Block> SECURITY_FENCE = BLOCKS.register("security_fence", SecurityFence::new);
+    public static final RegistryObject<Block> SEWER_COVER_SMOKE = BLOCKS.register("sewer_cover_smoke", SewerCoverSmoke::new);
+    public static final RegistryObject<Block> SMALL_LIGHT = BLOCKS.register("small_light", SmallLight::new);
+    public static final RegistryObject<Block> SPRAY_CAN_01 = BLOCKS.register("spray_can_01", SprayCan01::new);
+    public static final RegistryObject<Block> SPRAY_CAN_02 = BLOCKS.register("spray_can_02", SprayCan02::new);
+    public static final RegistryObject<Block> SPRAY_CAN_03 = BLOCKS.register("spray_can_03", SprayCan03::new);
+    public static final RegistryObject<Block> RAT_BLACK = BLOCKS.register("rat_black", RatBlack::new);
+    public static final RegistryObject<Block> STREET_LIGHT = BLOCKS.register("street_light", StreetLight::new);
+    public static final RegistryObject<Block> BOX_01 = BLOCKS.register("box_01", Box01::new);
+    public static final RegistryObject<Block> BOX_02 = BLOCKS.register("box_02", Box02::new);
+    public static final RegistryObject<Block> BOX_03 = BLOCKS.register("box_03", Box03::new);
+    public static final RegistryObject<Block> BOX_04 = BLOCKS.register("box_04", Box04::new);
+    public static final RegistryObject<Block> BOX_05 = BLOCKS.register("box_05", Box05::new);
+    public static final RegistryObject<Block> BOX_06 = BLOCKS.register("box_06", Box06::new);
+    public static final RegistryObject<Block> BOX_07 = BLOCKS.register("box_07", Box07::new);
+    public static final RegistryObject<Block> GRAFFITI_01 = BLOCKS.register("graffiti_01", Graffiti01::new);
+    public static final RegistryObject<Block> GRAFFITI_02 = BLOCKS.register("graffiti_02", Graffiti02::new);
+    public static final RegistryObject<Block> GRAFFITI_03 = BLOCKS.register("graffiti_03", Graffiti03::new);
+    public static final RegistryObject<Block> GRAFFITI_04 = BLOCKS.register("graffiti_04", Graffiti04::new);
+    public static final RegistryObject<Block> GRAFFITI_05 = BLOCKS.register("graffiti_05", Graffiti05::new);
+    public static final RegistryObject<Block> GRAFFITI_06 = BLOCKS.register("graffiti_06", Graffiti06::new);
+    public static final RegistryObject<Block> FIRE_HYDRANT = BLOCKS.register("fire_hydrant", FireHydrant::new);
     public static final RegistryObject<Block> MAP_HOLOGRAM = BLOCKS.register("map_hologram", MapHologram::new);
+    public static final RegistryObject<Block> PILE_FILES = BLOCKS.register("pile_files", PileFiles::new);
+    public static final RegistryObject<Block> PILE_PAPER = BLOCKS.register("pile_paper", PilePaper::new);
+    public static final RegistryObject<Block> OFFICE_SMALL_PRINTER = BLOCKS.register("office_small_printer", OfficeSmallPrinter::new);
+    public static final RegistryObject<Block> OFFICE_SMALL_SOFA = BLOCKS.register("office_small_sofa", OfficeSmallSofa::new);
+    public static final RegistryObject<Block> OFFICE_SHELF = BLOCKS.register("office_shelf", OfficeShelf::new);
+    public static final RegistryObject<Block> OFFICE_SHORT_TONGUE = BLOCKS.register("office_short_tongue", OfficeShortTongue::new);
+    public static final RegistryObject<Block> OFFICE_BIG_SOFA = BLOCKS.register("office_big_sofa", OfficeBigSofa::new);
+    public static final RegistryObject<Block> OFFICE_TABLE = BLOCKS.register("office_table", OfficeTable::new);
+    public static final RegistryObject<Block> OFFICE_BIG_TABLE = BLOCKS.register("office_big_table", OfficeBigTable::new);
+    public static final RegistryObject<Block> OFFICE_SMALL_TABLE = BLOCKS.register("office_small_table", OfficeSmallTable::new);
+    public static final RegistryObject<Block> OFFICE_TV = BLOCKS.register("office_tv", OfficeTV::new);
+    public static final RegistryObject<Block> OFFICE_WATER_DISPENSER = BLOCKS.register("office_water_dispenser", OfficeWaterDispenser::new);
+    public static final RegistryObject<Block> OFFICE_BIG_PRINTER = BLOCKS.register("office_big_printer", OfficeBigPrinter::new);
+    public static final RegistryObject<Block> OFFICE_WHITE_BOARD = BLOCKS.register("office_white_board", OfficeWhiteBoard::new);
+    public static final RegistryObject<Block> OFFICE_BIN = BLOCKS.register("office_bin", OfficeBin::new);
+    public static final RegistryObject<Block> OFFICE_BOARD = BLOCKS.register("office_board", OfficeBoard::new);
+    public static final RegistryObject<Block> OFFICE_ARMCHAIR = BLOCKS.register("office_armchair", OfficeArmchair::new);
+    public static final RegistryObject<Block> OFFICE_CHAIR = BLOCKS.register("office_chair", OfficeChair::new);
+    public static final RegistryObject<Block> OFFICE_FILE_BOX = BLOCKS.register("office_file_box", OfficeFileBox::new);
+    public static final RegistryObject<Block> OFFICE_LONG_DRAWER = BLOCKS.register("office_long_drawer", OfficeLongDrawer::new);
     public static final RegistryObject<Block> DUNGEON_CAGE_WITH_BONE = BLOCKS.register("dungeon_cage_with_bone", DungeonCageWithBone::new);
     public static final RegistryObject<Block> DUNGEON_WOOD_CHAIR_WITH_BONE = BLOCKS.register("dungeon_wood_chair_with_bone", DungeonWoodChairWithBone::new);
     public static final RegistryObject<Block> DUNGEON_DECORATE_SWORD_AND_BONE = BLOCKS.register("dungeon_decorate_sword_and_bone", DungeonDecorateSwordAndBone::new);
@@ -114,10 +208,190 @@ public class Registry {
             () -> new BlockItem(DUNGEON_WOOD_CHAIR_LONG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> GRAFFITI_ITEM = ITEMS.register("graffiti",
             () -> new BlockItem(GRAFFITI.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> TRANSIT_FENCE_ITEM = ITEMS.register("transit_fence",
+            () -> new BlockItem(TRANSIT_FENCE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> PILE_FILES_ITEM = ITEMS.register("pile_files",
+            () -> new BlockItem(PILE_FILES.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> PILE_PAPER_ITEM = ITEMS.register("pile_paper",
+            () -> new BlockItem(PILE_PAPER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_SMALL_PRINTER_ITEM = ITEMS.register("office_small_printer",
+            () -> new BlockItem(OFFICE_SMALL_PRINTER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_BIG_PRINTER_ITEM = ITEMS.register("office_big_printer",
+            () -> new BlockItem(OFFICE_BIG_PRINTER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_BIG_SOFA_ITEM = ITEMS.register("office_big_sofa",
+            () -> new BlockItem(OFFICE_BIG_SOFA.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_SMALL_SOFA_ITEM = ITEMS.register("office_small_sofa",
+            () -> new BlockItem(OFFICE_SMALL_SOFA.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> TRASH_CAN_ITEM = ITEMS.register("trash_can",
+            () -> new BlockItem(TRASH_CAN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_SHELF_ITEM = ITEMS.register("office_shelf",
+            () -> new BlockItem(OFFICE_SHELF.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_SHORT_TONGUE_ITEM = ITEMS.register("office_short_tongue",
+            () -> new BlockItem(OFFICE_SHORT_TONGUE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_TABLE_ITEM = ITEMS.register("office_table",
+            () -> new BlockItem(OFFICE_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_BIN_ITEM = ITEMS.register("office_bin",
+            () -> new BlockItem(OFFICE_BIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_BOARD_ITEM = ITEMS.register("office_board",
+            () -> new BlockItem(OFFICE_BOARD.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_BIG_TABLE_ITEM = ITEMS.register("office_big_table",
+            () -> new BlockItem(OFFICE_BIG_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_SMALL_TABLE_ITEM = ITEMS.register("office_small_table",
+            () -> new BlockItem(OFFICE_SMALL_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_TV_ITEM = ITEMS.register("office_tv",
+            () -> new BlockItem(OFFICE_TV.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_WATER_DISPENSER_ITEM = ITEMS.register("office_water_dispenser",
+            () -> new BlockItem(OFFICE_WATER_DISPENSER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_WHITE_BOARD_ITEM = ITEMS.register("office_white_board",
+            () -> new BlockItem(OFFICE_WHITE_BOARD.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_ARMCHAIR_ITEM = ITEMS.register("office_armchair",
+            () -> new BlockItem(OFFICE_ARMCHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_CHAIR_ITEM = ITEMS.register("office_chair",
+            () -> new BlockItem(OFFICE_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_FILE_BOX_ITEM = ITEMS.register("office_file_box",
+            () -> new BlockItem(OFFICE_FILE_BOX.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> OFFICE_LONG_DRAWER_ITEM = ITEMS.register("office_long_drawer",
+            () -> new BlockItem(OFFICE_LONG_DRAWER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> ATM_MACHINE_ITEM = ITEMS.register("atm_machine",
+            () -> new BlockItem(ATM_MACHINE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> AIR_CONDITIONER_ITEM = ITEMS.register("air_conditioner",
+            () -> new BlockItem(AIR_CONDITIONER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> CITY_BENCH_ITEM = ITEMS.register("city_bench",
+            () -> new BlockItem(CITY_BENCH.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> FIRE_HYDRANT_ITEM = ITEMS.register("fire_hydrant",
+            () -> new BlockItem(FIRE_HYDRANT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BUS_STATION_ITEM = ITEMS.register("bus_station",
+            () -> new BlockItem(BUS_STATION.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BUS_SIGN_ITEM = ITEMS.register("bus_sign",
+            () -> new BlockItem(BUS_SIGN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> MAIL_BOX_ITEM = ITEMS.register("mail_box",
+            () -> new BlockItem(MAIL_BOX.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> RAT_BLACK_ITEM = ITEMS.register("rat_black",
+            () -> new BlockItem(RAT_BLACK.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> RAT_BROWN_ITEM = ITEMS.register("rat_brown",
+            () -> new BlockItem(RAT_BROWN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> NEWSPAPER_READ_ITEM = ITEMS.register("newspaper_read",
+            () -> new BlockItem(NEWSPAPER_READ.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> NEWSPAPER_STACK_ITEM = ITEMS.register("newspaper_stack",
+            () -> new BlockItem(NEWSPAPER_STACK.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> NEWSPAPER_VENDING_MACHINE_ITEM = ITEMS.register("newspaper_vending_machine",
+            () -> new BlockItem(NEWSPAPER_VENDING_MACHINE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> PIZZA_BOX_ITEM = ITEMS.register("pizza_box",
+            () -> new BlockItem(PIZZA_BOX.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SECURITY_FENCE_ITEM = ITEMS.register("security_fence",
+            () -> new BlockItem(SECURITY_FENCE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SEWER_COVER_SMOKE_ITEM = ITEMS.register("sewer_cover_smoke",
+            () -> new BlockItem(SEWER_COVER_SMOKE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SMALL_LIGHT_ITEM = ITEMS.register("small_light",
+            () -> new BlockItem(SMALL_LIGHT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SPRAY_CAN_01_ITEM = ITEMS.register("spray_can_01",
+            () -> new BlockItem(SPRAY_CAN_01.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SPRAY_CAN_02_ITEM = ITEMS.register("spray_can_02",
+            () -> new BlockItem(SPRAY_CAN_02.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SPRAY_CAN_03_ITEM = ITEMS.register("spray_can_03",
+            () -> new BlockItem(SPRAY_CAN_03.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> STREET_LIGHT_ITEM = ITEMS.register("street_light",
+            () -> new BlockItem(STREET_LIGHT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> PIZZA_BOX_02_ITEM = ITEMS.register("pizza_box_02",
+            () -> new BlockItem(PIZZA_BOX_02.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> GRAFFITI_01_ITEM = ITEMS.register("graffiti_01",
+            () -> new BlockItem(GRAFFITI_01.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> GRAFFITI_02_ITEM = ITEMS.register("graffiti_02",
+            () -> new BlockItem(GRAFFITI_02.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> GRAFFITI_03_ITEM = ITEMS.register("graffiti_03",
+            () -> new BlockItem(GRAFFITI_03.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> GRAFFITI_04_ITEM = ITEMS.register("graffiti_04",
+            () -> new BlockItem(GRAFFITI_04.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> GRAFFITI_05_ITEM = ITEMS.register("graffiti_05",
+            () -> new BlockItem(GRAFFITI_05.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> GRAFFITI_06_ITEM = ITEMS.register("graffiti_06",
+            () -> new BlockItem(GRAFFITI_06.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BOX_01_ITEM = ITEMS.register("box_01",
+            () -> new BlockItem(BOX_01.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BOX_02_ITEM = ITEMS.register("box_02",
+            () -> new BlockItem(BOX_02.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BOX_03_ITEM = ITEMS.register("box_03",
+            () -> new BlockItem(BOX_03.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BOX_04_ITEM = ITEMS.register("box_04",
+            () -> new BlockItem(BOX_04.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BOX_05_ITEM = ITEMS.register("box_05",
+            () -> new BlockItem(BOX_05.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BOX_06_ITEM = ITEMS.register("box_06",
+            () -> new BlockItem(BOX_06.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> BOX_07_ITEM = ITEMS.register("box_07",
+            () -> new BlockItem(BOX_07.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> VEHICLE_BARRIER_ITEM = ITEMS.register("vehicle_barrier",
+            () -> new BlockItem(VEHICLE_BARRIER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> STREET_LIGHT_MODERN_ITEM = ITEMS.register("street_light_modern",
+            () -> new BlockItem(STREET_LIGHT_MODERN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> STREET_LIGHT_MODERN_DOUBLE_ITEM = ITEMS.register("street_light_modern_double",
+            () -> new BlockItem(STREET_LIGHT_MODERN_DOUBLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> STREET_LIGHT_BIG_ITEM = ITEMS.register("street_light_big",
+            () -> new BlockItem(STREET_LIGHT_BIG.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> TRASH_CONTAINER_ITEM = ITEMS.register("trash_container",
+            () -> new BlockItem(TRASH_CONTAINER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> TRASH_CONTAINER_OPEN_ITEM = ITEMS.register("trash_container_open",
+            () -> new BlockItem(TRASH_CONTAINER_OPEN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> TRAFFIC_CONE_ITEM = ITEMS.register("traffic_cone",
+            () -> new BlockItem(TRAFFIC_CONE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> TRAFFIC_LIGHT_ITEM = ITEMS.register("traffic_light",
+            () -> new BlockItem(TRAFFIC_LIGHT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> SCI_FI_PLANT_ITEM = ITEMS.register("sci_fi_plant",
             () -> new BlockItem(SCI_FI_PLANT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BLACK_CHAIR_ITEM = ITEMS.register("sci_fi_black_chair",
+            () -> new BlockItem(SCI_FI_BLACK_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_ORANGE_CHAIR_ITEM = ITEMS.register("sci_fi_orange_chair",
+            () -> new BlockItem(SCI_FI_ORANGE_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> TELEPHONE_CABIN_ITEM = ITEMS.register("telephone_cabin",
+            () -> new BlockItem(TELEPHONE_CABIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_STOOL_ITEM = ITEMS.register("sci_fi_stool",
+            () -> new BlockItem(SCI_FI_STOOL.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_SMALL_BIN_ITEM = ITEMS.register("sci_fi_small_bin",
+            () -> new BlockItem(SCI_FI_SMALL_BIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BIG_BIN_ITEM = ITEMS.register("sci_fi_big_bin",
+            () -> new BlockItem(SCI_FI_BIG_BIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BARRIER_ITEM = ITEMS.register("sci_fi_barrier",
+            () -> new BlockItem(SCI_FI_BARRIER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_YELLOW_BARRIER_ITEM = ITEMS.register("sci_fi_yellow_barrier",
+            () -> new BlockItem(SCI_FI_YELLOW_BARRIER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_WARNING_SIGN_ITEM = ITEMS.register("sci_fi_warning_sign",
+            () -> new BlockItem(SCI_FI_WARNING_SIGN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_VERTICAL_CABLE_ITEM = ITEMS.register("sci_fi_vertical_cable",
+            () -> new BlockItem(SCI_FI_VERTICAL_CABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_HORIZONTAL_WIRE_ITEM = ITEMS.register("sci_fi_horizontal_wire",
+            () -> new BlockItem(SCI_FI_HORIZONTAL_WIRE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_VERTICAL_WIRE_ITEM = ITEMS.register("sci_fi_vertical_wire",
+            () -> new BlockItem(SCI_FI_VERTICAL_WIRE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_TRASH_ITEM = ITEMS.register("sci_fi_trash",
+            () -> new BlockItem(SCI_FI_TRASH.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_VARIOUS_TRASH_ITEM = ITEMS.register("sci_fi_various_trash",
+            () -> new BlockItem(SCI_FI_VARIOUS_TRASH.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BIG_TABLE_ITEM = ITEMS.register("sci_fi_big_table",
+            () -> new BlockItem(SCI_FI_BIG_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BIG_VERTICAL_TABLE_ITEM = ITEMS.register("sci_fi_big_vertical_table",
+            () -> new BlockItem(SCI_FI_BIG_VERTICAL_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_BIG_GLASS_TABLE_ITEM = ITEMS.register("sci_fi_big_glass_table",
+            () -> new BlockItem(SCI_FI_BIG_GLASS_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> SCI_FI_TV_ITEM = ITEMS.register("sci_fi_tv",
             () -> new BlockItem(SCI_FI_TV.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_LIGHT_PILLAR_ITEM = ITEMS.register("sci_fi_light_pillar",
+            () -> new BlockItem(SCI_FI_LIGHT_PILLAR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_LAMP_PILLAR_ITEM = ITEMS.register("sci_fi_lamp_pillar",
+            () -> new BlockItem(SCI_FI_LAMP_PILLAR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_CHEST_ITEM = ITEMS.register("sci_fi_chest",
+            () -> new BlockItem(SCI_FI_CHEST.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_VERTICAL_SIGN_NIGHT_ITEM = ITEMS.register("sci_fi_vertical_sign_night",
+            () -> new BlockItem(SCI_FI_VERTICAL_SIGN_NIGHT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_SIGN_NIGHT_ITEM = ITEMS.register("sci_fi_sign_night",
+            () -> new BlockItem(SCI_FI_SIGN_NIGHT.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_SIGN_SUN_ITEM = ITEMS.register("sci_fi_sign_sun",
+            () -> new BlockItem(SCI_FI_SIGN_SUN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_GENERATOR_ITEM = ITEMS.register("sci_fi_generator",
+            () -> new BlockItem(SCI_FI_GENERATOR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_GATE_ITEM = ITEMS.register("sci_fi_gate",
+            () -> new BlockItem(SCI_FI_GATE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> SCI_FI_CRATE_ITEM = ITEMS.register("sci_fi_crate",
+            () -> new BlockItem(SCI_FI_CRATE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> SCI_FI_CC_TV_ITEM = ITEMS.register("sci_fi_cc_tv",
             () -> new BlockItem(SCI_FI_CC_TV.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> SCI_FI_BIN_ITEM = ITEMS.register("sci_fi_bin",

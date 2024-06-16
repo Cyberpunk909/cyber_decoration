@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/sci_fi_vertical_cable" },
+    "facing=south": { "model": "cyber_decoration:block/sci_fi_vertical_cable", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/sci_fi_vertical_cable", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/sci_fi_vertical_cable", "y":  90}
+  }
+}

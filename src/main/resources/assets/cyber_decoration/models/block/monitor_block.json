@@ -1,6 +1,0 @@
-{
-    "parent": "cyber_decoration:block/monitor",
-    "transform": {
-        "translation": [ 0, 1, 0 ]
-    }
-}

@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_decoration:block/office_white_board",
+    "transform": {
+        "translation": [ 0, 1, 0 ]
+    }
+}

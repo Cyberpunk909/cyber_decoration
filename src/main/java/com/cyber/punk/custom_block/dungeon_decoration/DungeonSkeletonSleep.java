@@ -31,7 +31,7 @@ public class DungeonSkeletonSleep extends AbstractCustomBlock {
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(0, 0, -12, 16, 10, 22)
+            Block.box(0, 0, 0, 16, 8, 32)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -61,16 +61,16 @@ public class DungeonSkeletonSleep extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST)};
                 break;
         }
 
@@ -90,18 +90,19 @@ public class DungeonSkeletonSleep extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST)};
                 break;
         }
+
         VoxelShape shape = getShapes().get(facing);
 
         for (BlockPos blockPos : positions) {
@@ -122,16 +123,16 @@ public class DungeonSkeletonSleep extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST)};
                 break;
         }
 

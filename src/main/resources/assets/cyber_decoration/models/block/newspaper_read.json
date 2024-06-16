@@ -1,0 +1,84 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"2": "cyber_decoration:block/newspaper_read",
+		"particle": "cyber_decoration:block/newspaper_read"
+	},
+	"elements": [
+		{
+			"from": [-2.25, 0.5, -0.04407],
+			"to": [8.75, 0.5, 14.95593],
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 0.5, 7.45593]},
+			"faces": {
+				"north": {"uv": [0, 0, 5.5, 0], "texture": "#2"},
+				"east": {"uv": [0, 0, 7.5, 0], "texture": "#2"},
+				"south": {"uv": [0, 0, 5.5, 0], "texture": "#2"},
+				"west": {"uv": [0, 0, 7.5, 0], "texture": "#2"},
+				"up": {"uv": [11, 15, 5.5, 7.5], "texture": "#2"},
+				"down": {"uv": [0, 7.5, 5.5, 15], "texture": "#2"}
+			}
+		},
+		{
+			"from": [8.25, 0.5, -0.04407],
+			"to": [19.25, 0.5, 14.95593],
+			"rotation": {"angle": 45, "axis": "z", "origin": [9, 0.5, 7.45593]},
+			"faces": {
+				"north": {"uv": [0, 0, 5.5, 0], "texture": "#2"},
+				"east": {"uv": [0, 0, 7.5, 0], "texture": "#2"},
+				"south": {"uv": [0, 0, 5.5, 0], "texture": "#2"},
+				"west": {"uv": [0, 0, 7.5, 0], "texture": "#2"},
+				"up": {"uv": [5.5, 15, 0, 7.5], "texture": "#2"},
+				"down": {"uv": [11, 7.5, 5.5, 15], "texture": "#2"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-66, 0, -180],
+			"translation": [-5.75, 3.25, 1.5],
+			"scale": [0.64, 0.64, 0.64]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-66, 0, -180],
+			"translation": [-5.75, 3.25, 1.5],
+			"scale": [0.64, 0.64, 0.64]
+		},
+		"firstperson_righthand": {
+			"rotation": [65, 161, -27],
+			"translation": [-1.5, 4.75, 0],
+			"scale": [0.62797, 0.62797, 0.62797]
+		},
+		"firstperson_lefthand": {
+			"rotation": [65, 161, -27],
+			"translation": [-1.5, 4.75, 0],
+			"scale": [0.62797, 0.62797, 0.62797]
+		},
+		"ground": {
+			"translation": [0, 4.75, 0],
+			"scale": [0.62, 0.62, 0.62]
+		},
+		"gui": {
+			"rotation": [67, -150, 0],
+			"translation": [-0.25, -0.5, 0],
+			"scale": [0.67, 0.67, 0.67]
+		},
+		"head": {
+			"translation": [0, 14.5, 0]
+		},
+		"fixed": {
+			"rotation": [-90, 0, 0],
+			"translation": [0, 0, -15.25],
+			"scale": [2, 2, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "newspaper_stack",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

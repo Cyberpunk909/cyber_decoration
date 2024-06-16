@@ -33,7 +33,7 @@ public class Graffiti extends AbstractCustomBlock {
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-8, 0, 15.9, 24, 32, 15.9)
+            Block.box(-16, 0, 15.9, 16, 32, 15.9)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -62,36 +62,28 @@ public class Graffiti extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.WEST),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
-                break;
-            case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.WEST)};
                 break;
+            case SOUTH:
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).above().relative(Direction.EAST),
+                        pos.relative(Direction.UP).above(),
+                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.SOUTH),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).relative(Direction.NORTH)};
+                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
+                        pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
         }
 
@@ -111,36 +103,28 @@ public class Graffiti extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.WEST),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
-                break;
-            case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.WEST)};
                 break;
+            case SOUTH:
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).above().relative(Direction.EAST),
+                        pos.relative(Direction.UP).above(),
+                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.SOUTH),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).relative(Direction.NORTH)};
+                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
+                        pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
         }
 
@@ -165,36 +149,28 @@ public class Graffiti extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.WEST),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
-                break;
-            case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.EAST),
-                        pos.relative(Direction.UP).above().relative(Direction.WEST),
-                        pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.EAST),
                         pos.relative(Direction.UP).relative(Direction.WEST)};
                 break;
+            case SOUTH:
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).above().relative(Direction.EAST),
+                        pos.relative(Direction.UP).above(),
+                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).above().relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.SOUTH),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
-                        pos.relative(Direction.UP).relative(Direction.NORTH)};
+                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).above().relative(Direction.NORTH),
-                        pos.relative(Direction.UP).above().relative(Direction.SOUTH),
                         pos.relative(Direction.UP).above(),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH)};
+                        pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
         }
 

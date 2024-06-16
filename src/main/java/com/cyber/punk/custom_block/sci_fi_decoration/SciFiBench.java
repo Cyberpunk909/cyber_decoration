@@ -32,7 +32,7 @@ public class SciFiBench extends AbstractCustomBlock {
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-9, 0, 0, 25, 23, 16)
+            Block.box(0, 0, 0, 32, 22, 16)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -62,23 +62,19 @@ public class SciFiBench extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).relative(Direction.WEST),};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),  pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
         }
@@ -99,23 +95,19 @@ public class SciFiBench extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).relative(Direction.WEST),};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),  pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
         }
@@ -141,23 +133,19 @@ public class SciFiBench extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
+                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.EAST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.WEST),
-                        pos.relative(Direction.UP).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.UP),
+                        pos.relative(Direction.UP).relative(Direction.WEST),};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.SOUTH),
+                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.NORTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH), pos.relative(Direction.UP),
-                        pos.relative(Direction.UP).relative(Direction.NORTH),
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),  pos.relative(Direction.UP),
                         pos.relative(Direction.UP).relative(Direction.SOUTH)};
                 break;
         }

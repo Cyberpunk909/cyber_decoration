@@ -31,7 +31,7 @@ public class OakPlankHorizontal extends AbstractCustomBlock {
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-8, 0, -8, 24, 8, 24)
+            Block.box(-16, 0, 0, 16, 6, 32)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);
@@ -61,39 +61,26 @@ public class OakPlankHorizontal extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST),
-                        pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH),
-                        pos.relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.NORTH).relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.SOUTH).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST),
+                        pos.relative(Direction.SOUTH),
+                        pos.relative(Direction.SOUTH).relative(Direction.WEST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH),pos.relative(Direction.NORTH),
-                        pos.relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.NORTH).relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.SOUTH).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST),
+                        pos.relative(Direction.NORTH),
+                        pos.relative(Direction.NORTH).relative(Direction.EAST)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST), pos.relative(Direction.EAST),
-                        pos.relative(Direction.WEST).relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.EAST).relative(Direction.SOUTH),
-                        pos.relative(Direction.EAST).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),
+                        pos.relative(Direction.EAST),
+                        pos.relative(Direction.EAST).relative(Direction.SOUTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH),
-                        pos.relative(Direction.EAST), pos.relative(Direction.WEST),
-                        pos.relative(Direction.WEST).relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.EAST).relative(Direction.SOUTH),
-                        pos.relative(Direction.EAST).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH),
+                        pos.relative(Direction.WEST),
+                        pos.relative(Direction.WEST).relative(Direction.NORTH)};
                 break;
         }
-
 
         for (BlockPos blockPos : positions) {
             BlockState state = world.getBlockState(blockPos);
@@ -111,39 +98,26 @@ public class OakPlankHorizontal extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST),
-                        pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH),
-                        pos.relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.NORTH).relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.SOUTH).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST),
+                        pos.relative(Direction.SOUTH),
+                        pos.relative(Direction.SOUTH).relative(Direction.WEST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH),pos.relative(Direction.NORTH),
-                        pos.relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.NORTH).relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.SOUTH).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST),
+                        pos.relative(Direction.NORTH),
+                        pos.relative(Direction.NORTH).relative(Direction.EAST)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST), pos.relative(Direction.EAST),
-                        pos.relative(Direction.WEST).relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.EAST).relative(Direction.SOUTH),
-                        pos.relative(Direction.EAST).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),
+                        pos.relative(Direction.EAST),
+                        pos.relative(Direction.EAST).relative(Direction.SOUTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH),
-                        pos.relative(Direction.EAST), pos.relative(Direction.WEST),
-                        pos.relative(Direction.WEST).relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.EAST).relative(Direction.SOUTH),
-                        pos.relative(Direction.EAST).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH),
+                        pos.relative(Direction.WEST),
+                        pos.relative(Direction.WEST).relative(Direction.NORTH)};
                 break;
         }
-
 
         VoxelShape shape = getShapes().get(facing);
 
@@ -166,36 +140,24 @@ public class OakPlankHorizontal extends AbstractCustomBlock {
         switch (facing) {
             case NORTH:
             default:
-                positions = new BlockPos[]{pos.relative(Direction.EAST), pos.relative(Direction.WEST),
-                        pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH),
-                        pos.relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.NORTH).relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.SOUTH).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.WEST),
+                        pos.relative(Direction.SOUTH),
+                        pos.relative(Direction.SOUTH).relative(Direction.WEST)};
                 break;
             case SOUTH:
-                positions = new BlockPos[]{pos.relative(Direction.WEST), pos.relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH),pos.relative(Direction.NORTH),
-                        pos.relative(Direction.NORTH).relative(Direction.WEST),
-                        pos.relative(Direction.NORTH).relative(Direction.EAST),
-                        pos.relative(Direction.SOUTH).relative(Direction.WEST),
-                        pos.relative(Direction.SOUTH).relative(Direction.EAST)};
+                positions = new BlockPos[]{pos.relative(Direction.EAST),
+                        pos.relative(Direction.NORTH),
+                        pos.relative(Direction.NORTH).relative(Direction.EAST)};
                 break;
             case WEST:
-                positions = new BlockPos[]{pos.relative(Direction.NORTH), pos.relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST), pos.relative(Direction.EAST),
-                        pos.relative(Direction.WEST).relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.EAST).relative(Direction.SOUTH),
-                        pos.relative(Direction.EAST).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.SOUTH),
+                        pos.relative(Direction.EAST),
+                        pos.relative(Direction.EAST).relative(Direction.SOUTH)};
                 break;
             case EAST:
-                positions = new BlockPos[]{pos.relative(Direction.SOUTH), pos.relative(Direction.NORTH),
-                        pos.relative(Direction.EAST), pos.relative(Direction.WEST),
-                        pos.relative(Direction.WEST).relative(Direction.SOUTH),
-                        pos.relative(Direction.WEST).relative(Direction.NORTH),
-                        pos.relative(Direction.EAST).relative(Direction.SOUTH),
-                        pos.relative(Direction.EAST).relative(Direction.NORTH)};
+                positions = new BlockPos[]{pos.relative(Direction.NORTH),
+                        pos.relative(Direction.WEST),
+                        pos.relative(Direction.WEST).relative(Direction.NORTH)};
                 break;
         }
 

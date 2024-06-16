@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/office_big_printer" },
+    "facing=south": { "model": "cyber_decoration:block/office_big_printer", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/office_big_printer", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/office_big_printer", "y":  90}
+  }
+}

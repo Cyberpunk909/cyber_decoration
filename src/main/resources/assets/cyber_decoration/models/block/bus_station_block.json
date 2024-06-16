@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_decoration:block/bus_station",
+    "transform": {
+        "translation": [ 0, 1, 0 ]
+    }
+}

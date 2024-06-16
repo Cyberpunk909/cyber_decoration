@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_decoration:block/trash_container",
+    "transform": {
+        "translation": [ 0, 1, 0 ]
+    }
+}

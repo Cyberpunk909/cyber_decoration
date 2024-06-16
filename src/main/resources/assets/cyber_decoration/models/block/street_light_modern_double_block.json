@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_decoration:block/street_light_modern_double",
+    "transform": {
+        "translation": [ 0, 1, 0 ]
+    }
+}

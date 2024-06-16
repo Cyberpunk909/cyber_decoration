@@ -1,0 +1,6 @@
+{
+    "parent": "cyber_decoration:block/graffiti_05",
+    "transform": {
+        "translation": [ 0, 1, 0 ]
+    }
+}
