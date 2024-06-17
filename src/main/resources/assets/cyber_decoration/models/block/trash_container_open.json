@@ -2,9 +2,9 @@
 	"credit": "MadewithBlockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "cyber_decoration:block/trash_container_big",
+		"1": "cyber_decoration:block/trash_container_open",
 		"2": "cyber_decoration:block/flyes_anim",
-		"particle": "cyber_decoration:block/trash_container_big"
+		"particle": "cyber_decoration:block/trash_container_open"
 	},
 	"elements": [
 		{

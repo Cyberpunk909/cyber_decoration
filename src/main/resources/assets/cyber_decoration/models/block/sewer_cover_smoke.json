@@ -2,9 +2,9 @@
 	"credit": "MadewithBlockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"2": "cyber_decoration:block/sewer",
+		"2": "cyber_decoration:block/sewer_cover_smoke",
 		"4": "cyber_decoration:block/smoke_anim",
-		"particle": "cyber_decoration:block/sewer"
+		"particle": "cyber_decoration:block/sewer_cover_smoke"
 	},
 	"elements": [
 		{

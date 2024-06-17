@@ -2,8 +2,8 @@
 	"credit": "MadewithBlockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "cyber_decoration:block/oakplant",
-		"particle": "cyber_decoration:block/oakplant"
+		"1": "cyber_decoration:block/oak_plant",
+		"particle": "cyber_decoration:block/oak_plant"
 	},
 	"elements": [
 		{

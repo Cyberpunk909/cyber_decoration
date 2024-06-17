@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cyber_decoration:newspaper_red"
+          "name": "cyber_decoration:newspaper_read"
         }
       ],
       "conditions": [

@@ -1,8 +1,8 @@
 {
   "variants": {
-    "facing=north": { "model": "cyber_decoration:block/sewer_cover_smoke" },
-    "facing=south": { "model": "cyber_decoration:block/sewer_cover_smoke", "y":  180},
-    "facing=west": { "model": "cyber_decoration:block/sewer_cover_smoke", "y":  270},
-    "facing=east": { "model": "cyber_decoration:block/sewer_cover_smoke", "y":  90}
+    "facing=north": { "model": "cyber_decoration:item/sewer_cover_smoke" },
+    "facing=south": { "model": "cyber_decoration:item/sewer_cover_smoke", "y":  180},
+    "facing=west": { "model": "cyber_decoration:item/sewer_cover_smoke", "y":  270},
+    "facing=east": { "model": "cyber_decoration:item/sewer_cover_smoke", "y":  90}
   }
 }
