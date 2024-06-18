@@ -27,12 +27,11 @@ public class Graffiti04 extends AbstractCustomBlock {
         super(Properties.of(
                         Material.DECORATION)
                 .strength(1f,4.0f)
-                .noOcclusion()
-                .noCollission());
+                .noOcclusion());
     }
 
     private static final VoxelShape SHAPE_N = Stream.of(
-            Block.box(-16, 0, 15.98, 32, 27, 15.98)
+            Block.box(-16, 0, 16, 32, 27, 16)
     ).reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
 
     private static final VoxelShape SHAPE_E = VoxelUtil.rotateShape(Direction.NORTH, Direction.EAST, SHAPE_N);

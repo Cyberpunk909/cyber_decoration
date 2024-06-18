@@ -3,11 +3,13 @@ package com.cyber.punk.util;
 import com.cyber.punk.bounding_block.BoundingBlock;
 import com.cyber.punk.custom_block.city_streets.*;
 import com.cyber.punk.custom_block.dungeon_decoration.*;
+import com.cyber.punk.custom_block.hospital.*;
 import com.cyber.punk.custom_block.office_decoration.*;
 import com.cyber.punk.custom_block.sci_fi_decoration.*;
 import com.cyber.punk.custom_block.summer_decoration.*;
 import com.cyber.punk.just_block.city_streets.*;
 import com.cyber.punk.just_block.dungeon_decoration.*;
+import com.cyber.punk.just_block.hospital.*;
 import com.cyber.punk.just_block.office_decoration.*;
 import com.cyber.punk.just_block.sci_fi_decoration.*;
 import com.cyber.punk.just_block.summer_decoration.OakLog;
@@ -75,6 +77,32 @@ public class Registry {
     public static final RegistryObject<Block> DUNGEON_WOOD_BARREL = BLOCKS.register("dungeon_wood_barrel", DungeonWoodBarrel::new);
     public static final RegistryObject<Block> DUNGEON_WOOD_BOX = BLOCKS.register("dungeon_wood_box", DungeonWoodBox::new);
     public static final RegistryObject<Block> DUNGEON_CAGE = BLOCKS.register("dungeon_cage", DungeonCage::new);
+    public static final RegistryObject<Block> HOSPITAL_CHAIR = BLOCKS.register("hospital_chair", HospitalChair::new);
+    public static final RegistryObject<Block> HOSPITAL_BENCH = BLOCKS.register("hospital_bench", HospitalBench::new);
+    public static final RegistryObject<Block> HOSPITAL_CUPBOARD = BLOCKS.register("hospital_cupboard", HospitalCupboard::new);
+    public static final RegistryObject<Block> HOSPITAL_BEDSIDE_CUPBOARD = BLOCKS.register("hospital_bedside_cupboard", HospitalBedsideCupboard::new);
+    public static final RegistryObject<Block> HOSPITAL_BEDSIDE_LOCKER = BLOCKS.register("hospital_bedside_locker", HospitalBedsideLocker::new);
+    public static final RegistryObject<Block> HOSPITAL_FILING_CABINET = BLOCKS.register("hospital_filing_cabinet", HospitalFilingCabinet::new);
+    public static final RegistryObject<Block> HOSPITAL_REFRIGERATOR = BLOCKS.register("hospital_refrigerator", HospitalRefrigerator::new);
+    public static final RegistryObject<Block> HOSPITAL_SUPPLY_CABINET = BLOCKS.register("hospital_supply_cabinet", HospitalSupplyCabinet::new);
+    public static final RegistryObject<Block> HOSPITAL_CURTAIN = BLOCKS.register("hospital_curtain", HospitalCurtain::new);
+    public static final RegistryObject<Block> HOSPITAL_LONG_CURTAIN = BLOCKS.register("hospital_long_curtain", HospitalLongCurtain::new);
+    public static final RegistryObject<Block> HOSPITAL_SHELF = BLOCKS.register("hospital_shelf", HospitalShelf::new);
+    public static final RegistryObject<Block> HOSPITAL_SHELF_WITH_HANDLE = BLOCKS.register("hospital_shelf_with_handle", HospitalShelfWithHandle::new);
+    public static final RegistryObject<Block> HOSPITAL_SOFA = BLOCKS.register("hospital_sofa", HospitalSofa::new);
+    public static final RegistryObject<Block> HOSPITAL_WHITE_SOFA = BLOCKS.register("hospital_white_sofa", HospitalWhiteSofa::new);
+    public static final RegistryObject<Block> HOSPITAL_THIRD_SOFA = BLOCKS.register("hospital_third_sofa", HospitalThirdSofa::new);
+    public static final RegistryObject<Block> HOSPITAL_STAND = BLOCKS.register("hospital_stand", HospitalStand::new);
+    public static final RegistryObject<Block> HOSPITAL_TRASH = BLOCKS.register("hospital_trash", HospitalTrash::new);
+    public static final RegistryObject<Block> HOSPITAL_WHEELCHAIR = BLOCKS.register("hospital_wheelchair", HospitalWheelchair::new);
+    public static final RegistryObject<Block> HOSPITAL_AMBULANCE_BED = BLOCKS.register("hospital_ambulance_bed", HospitalAmbulanceBed::new);
+    public static final RegistryObject<Block> HOSPITAL_BED = BLOCKS.register("hospital_bed", HospitalBed::new);
+    public static final RegistryObject<Block> HOSPITAL_BLUE_BED = BLOCKS.register("hospital_blue_bed", HospitalBlueBed::new);
+    public static final RegistryObject<Block> HOSPITAL_WHITE_BED = BLOCKS.register("hospital_white_bed", HospitalWhiteBed::new);
+    public static final RegistryObject<Block> HOSPITAL_BEDSIDE_TABLE = BLOCKS.register("hospital_bedside_table", HospitalBedsideTable::new);
+    public static final RegistryObject<Block> HOSPITAL_SMALL_SOFA = BLOCKS.register("hospital_small_sofa", HospitalSmallSofa::new);
+    public static final RegistryObject<Block> HOSPITAL_WHITE_CHAIR = BLOCKS.register("hospital_white_chair", HospitalWhiteChair::new);
+    public static final RegistryObject<Block> HOSPITAL_STOOL = BLOCKS.register("hospital_stool", HospitalStool::new);
     public static final RegistryObject<Block> OAK_LOG = BLOCKS.register("oak_log", OakLog::new);
     public static final RegistryObject<Block> OAK_PLANT = BLOCKS.register("oak_plant", OakPlant::new);
     public static final RegistryObject<Block> OAK_BENCH = BLOCKS.register("oak_bench", OakBench::new);
@@ -276,6 +304,59 @@ public class Registry {
             () -> new BlockItem(NEWSPAPER_STACK.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> NEWSPAPER_VENDING_MACHINE_ITEM = ITEMS.register("newspaper_vending_machine",
             () -> new BlockItem(NEWSPAPER_VENDING_MACHINE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_CHAIR_ITEM = ITEMS.register("hospital_chair",
+            () -> new BlockItem(HOSPITAL_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_BENCH_ITEM = ITEMS.register("hospital_bench",
+            () -> new BlockItem(HOSPITAL_BENCH.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_CUPBOARD_ITEM = ITEMS.register("hospital_cupboard",
+            () -> new BlockItem(HOSPITAL_CUPBOARD.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_BEDSIDE_CUPBOARD_ITEM = ITEMS.register("hospital_bedside_cupboard",
+            () -> new BlockItem(HOSPITAL_BEDSIDE_CUPBOARD.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_BEDSIDE_LOCKER_ITEM = ITEMS.register("hospital_bedside_locker",
+            () -> new BlockItem(HOSPITAL_BEDSIDE_LOCKER.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_FILING_CABINET_ITEM = ITEMS.register("hospital_filing_cabinet",
+            () -> new BlockItem(HOSPITAL_FILING_CABINET.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_REFRIGERATOR_ITEM = ITEMS.register("hospital_refrigerator",
+            () -> new BlockItem(HOSPITAL_REFRIGERATOR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_SUPPLY_CABINET_ITEM = ITEMS.register("hospital_supply_cabinet",
+            () -> new BlockItem(HOSPITAL_SUPPLY_CABINET.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_CURTAIN_ITEM = ITEMS.register("hospital_curtain",
+            () -> new BlockItem(HOSPITAL_CURTAIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_LONG_CURTAIN_ITEM = ITEMS.register("hospital_long_curtain",
+            () -> new BlockItem(HOSPITAL_LONG_CURTAIN.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_SHELF_ITEM = ITEMS.register("hospital_shelf",
+            () -> new BlockItem(HOSPITAL_SHELF.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_SHELF_WITH_HANDLE_ITEM = ITEMS.register("hospital_shelf_with_handle",
+            () -> new BlockItem(HOSPITAL_SHELF_WITH_HANDLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_SOFA_ITEM = ITEMS.register("hospital_sofa",
+            () -> new BlockItem(HOSPITAL_SOFA.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_WHITE_SOFA_ITEM = ITEMS.register("hospital_white_sofa",
+            () -> new BlockItem(HOSPITAL_WHITE_SOFA.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_THIRD_SOFA_ITEM = ITEMS.register("hospital_third_sofa",
+            () -> new BlockItem(HOSPITAL_THIRD_SOFA.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_STAND_ITEM = ITEMS.register("hospital_stand",
+            () -> new BlockItem(HOSPITAL_STAND.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_TRASH_ITEM = ITEMS.register("hospital_trash",
+            () -> new BlockItem(HOSPITAL_TRASH.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_WHEELCHAIR_ITEM = ITEMS.register("hospital_wheelchair",
+            () -> new BlockItem(HOSPITAL_WHEELCHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_AMBULANCE_BED_ITEM = ITEMS.register("hospital_ambulance_bed",
+            () -> new BlockItem(HOSPITAL_AMBULANCE_BED.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_BED_ITEM = ITEMS.register("hospital_bed",
+            () -> new BlockItem(HOSPITAL_BED.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_BLUE_BED_ITEM = ITEMS.register("hospital_blue_bed",
+            () -> new BlockItem(HOSPITAL_BLUE_BED.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_WHITE_BED_ITEM = ITEMS.register("hospital_white_bed",
+            () -> new BlockItem(HOSPITAL_WHITE_BED.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_BEDSIDE_TABLE_ITEM = ITEMS.register("hospital_bedside_table",
+            () -> new BlockItem(HOSPITAL_BEDSIDE_TABLE.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_SMALL_SOFA_ITEM = ITEMS.register("hospital_small_sofa",
+            () -> new BlockItem(HOSPITAL_SMALL_SOFA.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_WHITE_CHAIR_ITEM = ITEMS.register("hospital_white_chair",
+            () -> new BlockItem(HOSPITAL_WHITE_CHAIR.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+    public static final RegistryObject<BlockItem> HOSPITAL_STOOL_ITEM = ITEMS.register("hospital_stool",
+            () -> new BlockItem(HOSPITAL_STOOL.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
+
     public static final RegistryObject<BlockItem> PIZZA_BOX_ITEM = ITEMS.register("pizza_box",
             () -> new BlockItem(PIZZA_BOX.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
     public static final RegistryObject<BlockItem> SECURITY_FENCE_ITEM = ITEMS.register("security_fence",

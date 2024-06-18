@@ -26,7 +26,7 @@ import java.util.stream.Stream;
 public class SciFiBench extends AbstractCustomBlock {
     public SciFiBench() {
         super(Properties.of(
-                        Material.STONE)
+                        Material.METAL)
                 .strength(2f,4.0f)
                 .noOcclusion());
     }

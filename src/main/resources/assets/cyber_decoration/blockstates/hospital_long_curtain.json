@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "cyber_decoration:block/hospital_long_curtain" },
+    "facing=south": { "model": "cyber_decoration:block/hospital_long_curtain", "y":  180},
+    "facing=west": { "model": "cyber_decoration:block/hospital_long_curtain", "y":  270},
+    "facing=east": { "model": "cyber_decoration:block/hospital_long_curtain", "y":  90}
+  }
+}

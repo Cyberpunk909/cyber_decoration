@@ -61,6 +61,10 @@ public class Cyber {
         RenderTypeLookup.setRenderLayer(Registry.CAVE_VINES.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.OAK_PLANT.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.OAK_TREE.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.HOSPITAL_STAND.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.HOSPITAL_BED.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.HOSPITAL_BLUE_BED.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(Registry.HOSPITAL_WHITE_BED.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.SCARE_CROW.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.FROG.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.OFFICE_BIN.get(), RenderType.cutout());
