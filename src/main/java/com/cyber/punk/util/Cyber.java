@@ -1,12 +1,18 @@
 package com.cyber.punk.util;
 
+import com.cyber.punk.portable_bags.WoolBagScreen;
+import com.cyber.punk.test.BabyWalleRender;
+import com.cyber.punk.test.MobEntities;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -44,6 +50,7 @@ public class Cyber {
     private void doClientStuff(final FMLClientSetupEvent event) {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_FLAG.get(), RenderType.cutout());
+        ScreenManager.register(Registry.WOOL_BAG_CONTAINER.get(), WoolBagScreen::new);
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_SKELETON.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_SKELETON_HEAD.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(Registry.DUNGEON_SKELETON_SLEEP.get(), RenderType.cutout());

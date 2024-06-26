@@ -18,11 +18,16 @@ import com.cyber.punk.just_block.summer_decoration.OakStool;
 import com.cyber.punk.just_block.vanilla_block.*;
 import com.cyber.punk.light_block.LightBlock08;
 import com.cyber.punk.light_block.LightBlock15;
+import com.cyber.punk.portable_bags.WoolBagContainer;
+import com.cyber.punk.portable_bags.WoolBagItem;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.SpawnEggItem;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -34,6 +39,7 @@ public class Registry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cyber.MOD_ID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Cyber.MOD_ID);
+    public static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, Cyber.MOD_ID);
 
 
     // Предметы
@@ -42,6 +48,12 @@ public class Registry {
 
     // Фантом блок
     public static final RegistryObject<Block> BOUNDING_BLOCK = BLOCKS.register("bounding_block", BoundingBlock::new);
+
+    // Сумки
+    public static final RegistryObject<Item> WOOL_BAG = ITEMS.register("wool_bag",
+            () -> new WoolBagItem(new Item.Properties().tab(Cyber_Group.CYBER_GROUP).stacksTo(1)));
+    public static final RegistryObject<ContainerType<WoolBagContainer>> WOOL_BAG_CONTAINER = CONTAINERS.register("wool_bag_container",
+            () -> IForgeContainerType.create(WoolBagContainer::createClientContainer));
 
     // Блоки
 
@@ -956,6 +968,7 @@ public class Registry {
             () -> new BlockItem(CUT_OXIDIZED_COPPER_VERTICAL_SLAB.get(), new Item.Properties().tab(Cyber_Group.CYBER_GROUP)));
 
 
+
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> blockSupplier) {
         RegistryObject<T> blockRegistryObject = BLOCKS.register(name, blockSupplier);
         registerBlockItem(name, blockRegistryObject);
@@ -969,5 +982,6 @@ public class Registry {
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
         BLOCKS.register(eventBus);
+        CONTAINERS.register(eventBus);
     }
 }
