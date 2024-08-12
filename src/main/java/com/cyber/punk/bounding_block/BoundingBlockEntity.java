@@ -65,7 +65,6 @@ public class BoundingBlockEntity extends TileEntity {
     private IBoundingBlockEntity getMain() {
         TileEntity tile = this.getMainTile();
         if (tile != null && !(tile instanceof IBoundingBlockEntity)) {
-            Cyber.LOGGER.error("Found tile {} instead of an IBoundingBlock, at {}. Multiblock cannot function", tile, this.getMainPos());
             return null;
         } else {
             return (IBoundingBlockEntity)tile;
